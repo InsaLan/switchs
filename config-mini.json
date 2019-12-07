@@ -1,0 +1,45 @@
+{
+	"players-0up": {
+		"ports": {
+			"2-24": {
+				"untagged": 101,
+				"tagged": []
+			},
+
+			"1": {
+				"untagged": 1,
+				"tagged": [ 101 ]
+			}
+		}
+	},
+
+	"players-1up": {
+		"ports": {
+			"1-24": {
+				"untagged": 101,
+				"tagged": []
+			},
+
+			"25": {
+				"untagged": 1,
+				"tagged": [ 101 ]
+			}
+		}
+	},
+
+	"players-2up": {
+		"ports": {
+			"1-24": {
+				"untagged": 101,
+				"tagged": []
+			},
+
+			"25-26": {
+				"untagged": 1,
+				"tagged": [ 101 ]
+			}
+
+		}
+	}
+
+}

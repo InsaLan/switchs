@@ -27,10 +27,9 @@ for switch in listSwitchs:
             s.authenticate("admin", sys.argv[3])
             print("Connecté au switch "+switch["name"])
             
+            s.beforeVlan()
             s.activateSnmp("hotlinemontreal")
 
-            s.beforeVlan()
-            
             ports = listConfig[switch["config"]]["ports"]
             for port, config in [(p, ports[p]) for p in ports]:
             

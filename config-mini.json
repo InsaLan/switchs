@@ -1,5 +1,5 @@
 {
-	"players-0up": {
+	"24p-0up": {
 		"ports": {
 			"2-24": {
 				"untagged": 101,
@@ -13,7 +13,7 @@
 		}
 	},
 
-	"players-1up": {
+	"24p-1up": {
 		"ports": {
 			"1-24": {
 				"untagged": 101,
@@ -27,7 +27,7 @@
 		}
 	},
 
-	"players-2up": {
+	"24p-2up": {
 		"ports": {
 			"1-24": {
 				"untagged": 101,
@@ -36,7 +36,7 @@
 
 			"25-26": {
 				"untagged": 1,
-				"tagged": [ 101 ]
+				"tagged": [101]
 			}
 
 		}

@@ -1,0 +1,8 @@
+[
+	{ "name": "switch1", "ip": "172.16.1.104", "config": "salt", "model": "24p"},
+	{ "name": "switch1", "ip": "172.16.1.107", "config": "deadgame", "model": "24p"},
+	{ "name": "switch1", "ip": "172.16.1.108", "config": "lol", "model": "24p"},
+	{ "name": "switch1", "ip": "172.16.1.115", "config": "staff", "model": "24p"},
+	{ "name": "switch1", "ip": "172.16.1.118", "config": "csgo", "model": "24p"}
+
+]

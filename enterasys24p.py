@@ -17,9 +17,9 @@ class Enterasys24p:
         #self.telnet.read_until(b"#")
 
     def clearVlan(self, selector, vlan):
-        if selector not in [ "25", "26" ]:
-            self.telnet.write(b"switchport allowed vlan remove " + str(vlan).encode() + b"\n")   
-            self.waitForPrompt()
+        self.telnet.write(b"switchport native vlan 1\n")
+        self.telnet.write(b"no switchport allowed vlan\n")
+        self.waitForPrompt()
 
     def beforeVlan(self):
         self.telnet.write(b"configure\n")

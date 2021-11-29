@@ -1,0 +1,29 @@
+{
+	"joueurs": {
+		"ports": {
+			"1-24": {
+				"untagged": 101,
+				"tagged": []
+			},
+
+			"25": {
+				"untagged": 1,
+				"tagged": [ 101 ]
+			}
+		}
+	},
+
+	"staff": {
+		"ports": {
+			"1-24": {
+				"untagged": 100,
+				"tagged": []
+			},
+
+			"25": {
+				"untagged": 1,
+				"tagged": [ 100 ]
+			}
+		}
+	}
+}

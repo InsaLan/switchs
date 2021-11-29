@@ -1,0 +1,14 @@
+[
+	{ "name": "switch1", "ip": "172.16.1.101", "config": "joueurs", "model": "24p"},
+	{ "name": "switch2", "ip": "172.16.1.102", "config": "joueurs", "model": "24p"},
+	{ "name": "switch3", "ip": "172.16.1.103", "config": "joueurs", "model": "24p"},
+	{ "name": "switch4", "ip": "172.16.1.104", "config": "joueurs", "model": "24p"},
+	{ "name": "switch5", "ip": "172.16.1.105", "config": "joueurs", "model": "24p"},
+	{ "name": "switch6", "ip": "172.16.1.106", "config": "joueurs", "model": "24p"},
+	{ "name": "switch7", "ip": "172.16.1.107", "config": "joueurs", "model": "24p"},
+	{ "name": "switch8", "ip": "172.16.1.108", "config": "joueurs", "model": "24p"},
+	{ "name": "switch9", "ip": "172.16.1.109", "config": "joueurs", "model": "24p"},
+	{ "name": "switch10", "ip": "172.16.1.110", "config": "staff", "model": "24p"},
+	{ "name": "switch11", "ip": "172.16.1.111", "config": "staff", "model": "24p"},
+	{ "name": "switch12", "ip": "172.16.1.112", "config": "staff", "model": "24p"}
+]

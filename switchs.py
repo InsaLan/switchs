@@ -13,7 +13,7 @@ for switch in listSwitchs:
         
         s = None
         i = input("next switch {} ([g]o/[n]ext)".format(switch["ip"]))
-        if i == "n":
+        if i != "g":
             continue
 
         with Telnet(switch["ip"]) as tn:
@@ -24,8 +24,12 @@ for switch in listSwitchs:
             elif switch["model"] == "48p":
                 s = Enterasys48p(tn)
 
+            else :
+                print(f"Unsupported switch model \"{switch['model']}\"")
+                continue
+
             s.authenticate("admin", sys.argv[3])
-            print("Connecté au switch "+switch["name"])
+            print(f"Connected to switch {switch['name']}")
             
             s.beforeVlan()
             s.activateSnmp("hotlinemontreal")

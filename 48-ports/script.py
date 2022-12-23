@@ -1,14 +1,15 @@
-import json
-import sys
+from telnetlib import Telnet
+import sys, json
 
-if len(sys.argv) < 2:
-    print("You must specify the switch configuration file")
+if len(sys.argv) < 3:
+    print("Syntax: <config_file.json> <switch_password>")
     sys.exit()
 
 scriptFile = open(sys.argv[1], "r")
 data = json.loads(scriptFile.read())
 
-switch_number = data["switch_number"];
+switch_number = data["switch_number"]
+switch_ip = f"172.16.1.1{switch_number}"
 
 # 1 - we copy all ports datas to a new dictionnary with all port ranges being split at 48
 ports = {}
@@ -43,13 +44,14 @@ for port_range in ports:
 # 3 - we have all required datas, so let's go for creating the config file that will get pushed to the switch
 print(f"Creating temporary config for switch {switch_number} with vlans: {vlans}")
 
+tmpConfigName = "config48ports/tmpScript.cfg"
 # Début de l'écriture du fichier de config
-output = open("tmpScript.cfg", "w")
+output = open("/var/tftp/" + tmpConfigName, "w")
 
 output.write("begin\n")
 # Config IP
 output.write("set ip protocol none\n")
-output.write(f"set ip address 172.16.1.1{switch_number} mask 255.255.255.0 gateway 172.16.1.1\n")
+output.write(f"set ip address {switch_ip} mask 255.255.255.0 gateway 172.16.1.1\n")
 
 # system
 output.write(
@@ -108,3 +110,27 @@ set snmp group public user hotlinemontreal security-model v2c nonvolatile
 output.close();
 
 print("Done creating config")
+
+# 4 - we send the config!
+
+password = sys.argv[2]
+tftp_server_ip = "172.16.1.1"
+
+with Telnet(switch_ip) as tn:
+    print("Authenticating...")
+    tn.read_until(b"Username:")
+    tn.write(b"admin\n")
+    tn.read_until(b"Password:")
+    tn.write(password.encode()+b"\n")
+    tn.read_until(b"->")
+    
+    print(f"Copying config from {tftp_server_ip}...")
+    tn.write(b"copy tftp://" + tftp_server_ip.encode() + b"/" + tmpConfigName.encode() + b" configs/generatedConfig.cfg\n")
+    tn.read_until(b"->")
+    
+    print("Configuring switch to use new config...")
+    tn.write(b"configure configs/generatedConfig.cfg\n")
+    tn.read_until(b"->")
+    # besoin de valider avec un Y askip, à vérifier
+
+print("Done!")

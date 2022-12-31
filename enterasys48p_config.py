@@ -1,3 +1,7 @@
+# NEW VERSION
+# On préfère cette version à enterasys48p simple car elle push directement la config
+# sur le switch et ne rentre pas toutes les commandes via telnet (ce qui bugue sur les 48p)
+
 from telnetlib import Telnet
 
 class Enterasys48pConfig:
@@ -132,7 +136,7 @@ set snmp group public user hotlinemontreal security-model v2c nonvolatile
 if __name__ == "__main__":
     import sys, json
     
-    if len(sys.argv) < 3:
+    if len(sys.argv) < 4:
         print("Syntax: <config_file.json> <switch_password> <switch_number>")
         sys.exit()    
     

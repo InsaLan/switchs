@@ -1,3 +1,7 @@
+# OLD VERSION
+# On utilise enterasys48p_config qui push la config directement sur les 48ports
+# car cette version en telnet bugue
+
 import telnetlib
 
 class Enterasys48p:

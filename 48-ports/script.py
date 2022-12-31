@@ -1,11 +1,10 @@
 from telnetlib import Telnet
 
 class Enterasys48pConfig:
-    def __init__(self, number, password, data):
-        self.number = number
+    def __init__(self, ip, password, data):
+        self.ip = ip
         self.data = data
         self.password = password
-        self.ip = f"172.16.1.1{number}"
 
     def configure(self):
 
@@ -40,7 +39,7 @@ class Enterasys48pConfig:
                     vlans.append(tagged)
 
         # 3 - we have all required datas, so let's go for creating the config file that will get pushed to the switch
-        print(f"Creating temporary config for switch {self.number} with vlans: {vlans}")
+        print(f"Creating temporary config for switch {self.ip} with vlans: {vlans}")
 
         tmpConfigName = "config48ports/tmpScript.cfg"
         # Début de l'écriture du fichier de config
@@ -142,5 +141,5 @@ if __name__ == "__main__":
     switch_number = sys.argv[3]
     data = json.loads(scriptFile.read())
     
-    switch = Enterasys48pConfig(switch_number, switch_password, data)
+    switch = Enterasys48pConfig(f"172.16.1.1{switch_number}", switch_password, data)
     switch.configure()

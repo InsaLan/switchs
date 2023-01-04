@@ -113,7 +113,7 @@ set snmp group public user hotlinemontreal security-model v2c nonvolatile
         print("Done creating config")
 
         # 4 - we send the config!
-"""
+
         tftp_server_ip = "172.16.1.1"
 
         with Telnet(self.ip) as tn:
@@ -133,7 +133,7 @@ set snmp group public user hotlinemontreal security-model v2c nonvolatile
             tn.read_until(b"->")
             # besoin de valider avec un Y askip, à vérifier
 
-        print("Done!")"""
+        print("Done!")
 
 if __name__ == "__main__":
     import sys, json

@@ -1,1 +1,5 @@
-[{ "name": "umbar", "ip": "172.16.1.108", "config": "24p-2up"}, { "name": "erebor", "ip": "172.16.1.106", "config": "24p-2up"}, { "name": "khazad", "ip": "172.16.1.112", "config": "24p-2up"}]
+[
+  { "name": "umbar", "ip": "172.16.1.108", "config": "24p-2up" },
+  { "name": "erebor", "ip": "172.16.1.106", "config": "24p-2up" },
+  { "name": "khazad", "ip": "172.16.1.112", "config": "24p-2up" }
+]

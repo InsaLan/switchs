@@ -15,12 +15,13 @@ class Enterasys48pConfig:
         # 1 - we copy all ports datas to a new dictionnary with all port ranges being split at 48
         ports = {}
         for element in self.data["ports"]:
-            if "-" in element:
-                separation = element.split("-")
+            port_range = element.split(".")[-1]
+            if "-" in port_range:
+                separation = port_range.split("-")
                 premier = int(separation[0])
                 deuxieme = int(separation[1])
             else:
-                premier = int(element)
+                premier = int(port_range)
                 deuxieme = premier
             
             if premier <= 48 and deuxieme > 48:
@@ -105,13 +106,14 @@ set snmp community hotlinemontreal securityname hotlinemontreal nonvolatile
 set snmp access hotlinemontreal security-model v2c read All notify All nonvolatile
 set snmp group public user hotlinemontreal security-model v2c nonvolatile
 """)
+        output.write("end\n")
 
-        output.close();
+        output.close()
 
         print("Done creating config")
 
         # 4 - we send the config!
-
+"""
         tftp_server_ip = "172.16.1.1"
 
         with Telnet(self.ip) as tn:
@@ -131,19 +133,20 @@ set snmp group public user hotlinemontreal security-model v2c nonvolatile
             tn.read_until(b"->")
             # besoin de valider avec un Y askip, à vérifier
 
-        print("Done!")
+        print("Done!")"""
 
 if __name__ == "__main__":
     import sys, json
     
     if len(sys.argv) < 4:
-        print("Syntax: <config_file.json> <switch_password> <switch_number>")
+        print("Syntax: <config_file.json> <config_name> <switch_password> <switch_number>")
         sys.exit()    
     
     scriptFile = open(sys.argv[1], "r")
-    switch_password = sys.argv[2]
-    switch_number = sys.argv[3]
-    data = json.loads(scriptFile.read())
+    config_name = sys.argv[2]
+    switch_password = sys.argv[3]
+    switch_number = sys.argv[4]
+    data = json.loads(scriptFile.read())[config_name]
     
     switch = Enterasys48pConfig(f"172.16.1.1{switch_number}", switch_password, data)
     switch.configure()

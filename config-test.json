@@ -1,0 +1,29 @@
+{
+	"joueurs": {
+		"ports": {
+			"fe.1.1-48": {
+				"untagged": 101,
+				"tagged": []
+			},
+
+			"ge.1.49-50": {
+				"untagged": 1,
+				"tagged": [ 101 ]
+			}
+		}
+	},
+
+	"admin": {
+		"ports": {
+			"fe.1.1-48": {
+				"untagged": 103,
+				"tagged": []
+			},
+
+			"ge.1.49-50": {
+				"untagged": 1,
+				"tagged": [ 103 ]
+			}
+		}
+	}
+}

@@ -18,8 +18,8 @@ class Enterasys48p:
         self.waitForPrompt()
     
     def waitForPrompt(self):
-        #print(self.telnet.read_until(b"->")) # <-- print feedback from the switch
-        self.telnet.read_until(b"->")
+        print(self.telnet.read_until(b"->")) # <-- print feedback from the switch
+        #self.telnet.read_until(b"->")
 
     def beforeVlan(self):
         pass
@@ -34,6 +34,7 @@ class Enterasys48p:
             self.waitForPrompt()                                                                                                  
             self.telnet.write(b"clear vlan "+str(vlan).encode()+b"\n")
             self.waitForPrompt()
+        self.telnet.write(b"set switch stack-port ethernet")
 
     def setVlanUntagged(self, selector, vlan):
         self.clearVlan(selector, vlan)
@@ -71,9 +72,9 @@ class Enterasys48p:
 
     def activateSnmp(self, community):
         self.beforeVlan()
-        self.telnet.write(b"set snmp community "+community+" securityname "+community+"\n")
+        self.telnet.write(b"set snmp community "+str(community).encode()+b" securityname "+str(community).encode()+b"nonvolatile \n")
         self.waitForPrompt()
-        self.telnet.write(b"set snmp access "+community+" security-model v2c read All notify All nonvolatile\n")
+        self.telnet.write(b"set snmp access "+str(community).encode()+b" security-model v2c read All notify All nonvolatile\n")
         self.waitForPrompt()
-        self.telnet.write(b"set snmp group public user "+community+" security-model v2c nonvolatile\n") 
+        self.telnet.write(b"set snmp group public user "+str(community).encode()+b" security-model v2c nonvolatile\n") 
         self.waitForPrompt()

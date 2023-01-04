@@ -1,0 +1,4 @@
+[
+	{ "name": "switch21", "ip": "172.16.1.121", "config": "admin", "model": "48p"},
+	{ "name": "switch22", "ip": "172.16.1.122", "config": "joueur", "model": "48p"}
+]

@@ -130,8 +130,9 @@ set snmp group public user hotlinemontreal security-model v2c nonvolatile
             
             print("Configuring switch to use new config...")
             tn.write(b"configure configs/generatedConfig.cfg\n")
+            
+            tn.write(b"y")
             tn.read_until(b"->")
-            # besoin de valider avec un Y askip, à vérifier
 
         print("Done!")
 

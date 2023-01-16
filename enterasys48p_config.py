@@ -132,7 +132,6 @@ set snmp group public user hotlinemontreal security-model v2c nonvolatile
             tn.write(b"configure configs/generatedConfig.cfg\n")
             
             tn.write(b"y")
-            tn.read_until(b"->")
 
         print("Done!")
 

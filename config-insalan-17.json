@@ -3,22 +3,22 @@
 		"ports": {
 			"1-4": {
 				"untagged": 101,
-				"tagged": []
+				"tagged": [1]
 			},
 
 			"5-8": {
 				"untagged": 102,
-				"tagged": []
+				"tagged": [1]
 			},
 
             "9-12": {
 				"untagged": 103,
-				"tagged": []
+				"tagged": [1]
 			},
 
             "13-16": {
 				"untagged": 104,
-				"tagged": []
+				"tagged": [1]
 			},
 
             "17-46": {
@@ -38,22 +38,22 @@
 		"ports": {
 			"1-4": {
 				"untagged": 101,
-				"tagged": []
+				"tagged": [1]
 			},
 
 			"5-8": {
 				"untagged": 102,
-				"tagged": []
+				"tagged": [1]
 			},
 
             "9-12": {
 				"untagged": 103,
-				"tagged": []
+				"tagged": [1]
 			},
 
             "13-16": {
 				"untagged": 104,
-				"tagged": []
+				"tagged": [1]
 			},
 
             "17-48": {
@@ -73,22 +73,22 @@
 		"ports": {
 			"1-4": {
 				"untagged": 101,
-				"tagged": []
+				"tagged": [1]
 			},
 
 			"5-8": {
 				"untagged": 102,
-				"tagged": []
+				"tagged": [1]
 			},
 
 			"9-12": {
 				"untagged": 103,
-				"tagged": []
+				"tagged": [1]
 			},
 
 			"13-16": {
 				"untagged": 104,
-				"tagged": []
+				"tagged": [1]
 			},
 
 			"17-24": {
@@ -96,9 +96,23 @@
 				"tagged": []
 			},
 
-			"25": {
+			"25-26": {
 				"untagged": 1,
 				"tagged": [100, 101, 102, 103, 104]
+			}
+		}
+	},
+
+	"scene-joueur-24+1p": {
+		"ports": {
+			"1-24": {
+				"untagged": 10,
+				"tagged": []
+			},
+
+			"25-26": {
+				"untagged": 10,
+				"tagged": [1]
 			}
 		}
 	},
@@ -185,7 +199,7 @@
 				"tagged": []
 			},
 
-			"25": {
+			"25-26": {
 				"untagged": 1,
 				"tagged": [100, 101, 102, 103, 104]
 			}
@@ -239,7 +253,7 @@
                 "tagged": []
             },
 
-            "25": {
+            "25-26": {
                 "untagged": 1,
                 "tagged": [100, 101, 102, 103, 104, 110, 111, 112]
             }
@@ -283,7 +297,7 @@
 				"tagged": []
 			},
 
-			"25": {
+			"25-26": {
 				"untagged": 1,
 				"tagged": [100]
 			}
@@ -325,7 +339,7 @@
 				"tagged": []
 			},
 
-			"25": {
+			"25-26": {
 				"untagged": 1,
 				"tagged": [101]
 			}
@@ -369,7 +383,7 @@
 				"tagged": []
 			},
 			
-			"25": {
+			"25-26": {
 				"untagged": 1,
 				"tagged": [102]
 			}
@@ -413,7 +427,7 @@
 				"tagged": []
 			},
 
-			"25": {
+			"25-26": {
 				"untagged": 1,
 				"tagged": [103]
 			}
@@ -457,7 +471,7 @@
 				"tagged": []
 			},
 
-			"25": {
+			"25-26": {
 				"untagged": 1,
 				"tagged": [104]
 			}
@@ -501,7 +515,7 @@
 				"tagged": []
 			},
 
-			"25": {
+			"25-26": {
 				"untagged": 1,
 				"tagged": [111]
 			}

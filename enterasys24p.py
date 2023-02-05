@@ -21,8 +21,10 @@ class Enterasys24p:
         self.telnet.write(b"no switchport allowed vlan\n")
         self.waitForPrompt()
 
-    def beforeVlan(self):
+    def beforeVlan(self, upstream_nb=0):
         self.telnet.write(b"configure\n")
+        self.telnet.write(b"interface ethernet 1/1-"+str(22+upstream_nb).encode()+b"\n")
+        self.telnet.write(b"no switchport allowed vlan\n")
         self.waitForPrompt()
 
     def setInterface(self, selector):
@@ -35,7 +37,7 @@ class Enterasys24p:
         self.waitForPrompt()
 
     def setVlanTagged(self, selector, vlan):
-        self.clearVlan(selector, vlan)
+        # self.clearVlan(selector, vlan) # DO NOT CLEAR OTHER VLANS
         self.telnet.write(b"switchport allowed vlan add " + str(vlan).encode() + b" tagged\n")
         self.waitForPrompt()
 

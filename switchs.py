@@ -19,13 +19,14 @@ for switch in listSwitchs:
     if i != "g":
         continue
 
-    if switch["model"] == "24p":
+    if str(switch["model"]).startswith("24"):
         with Telnet(switch["ip"]) as tn:
             s = Enterasys24p(tn)
 
             s.authenticate("admin", sys.argv[3])
             print(f"Connected to switch {switch['name']}")
             
+            upstream_nb = str(switch["model"]).split("+")[1]
             s.beforeVlan()
             s.activateSnmp("hotlinemontreal")
 

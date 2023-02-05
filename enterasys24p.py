@@ -21,7 +21,7 @@ class Enterasys24p:
         self.telnet.write(b"no switchport allowed vlan\n")
         self.waitForPrompt()
 
-    def beforeVlan(self, upstream_nb=0):
+    def beforeVlan(self):
         self.telnet.write(b"configure\n")
         self.waitForPrompt()
 

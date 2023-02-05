@@ -27,7 +27,7 @@ for switch in listSwitchs:
             print(f"Connected to switch {switch['name']}")
             
             upstream_nb = str(switch["model"]).split("+")[1]
-            s.beforeVlan()
+            s.beforeVlan(upstream_nb)
             s.activateSnmp("hotlinemontreal")
 
             ports = listConfig[switch["config"]]["ports"]

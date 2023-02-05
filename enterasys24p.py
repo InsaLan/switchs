@@ -23,8 +23,6 @@ class Enterasys24p:
 
     def beforeVlan(self, upstream_nb=0):
         self.telnet.write(b"configure\n")
-        self.telnet.write(b"interface ethernet 1/1-"+str(22+upstream_nb).encode()+b"\n")
-        self.telnet.write(b"no switchport allowed vlan\n")
         self.waitForPrompt()
 
     def setInterface(self, selector):
@@ -61,7 +59,6 @@ class Enterasys24p:
         self.waitForPrompt()
 
     def activateSnmp(self, community):
-        self.beforeVlan()
         self.telnet.write(b"snmp-server\n")
         self.waitForPrompt()
         self.telnet.write(b"snmp-server community "+str(community).encode()+b" ro\n")

@@ -20,10 +20,12 @@
     {"name": "Orianna", "ip": "172.16.1.132", "config": "tm-50p", "model": "48p"},
     {"name": "Poppy", "ip": "172.16.1.131", "config": "tm-50p", "model": "48p"},
     {"name": "Qiyana", "ip": "172.16.1.119", "config": "tm-50p", "model": "48p"},
+    {"name": "Quinn", "ip": "172.16.1.138", "config": "tm-48p", "model": "48p"},
 
     {"name": "Rell", "ip": "172.16.1.113", "config": "rl-50p", "model": "48p"},
-    {"name": "Swain", "ip": "172.16.1.116", "config": "rl-50p", "model": "48p"},
+    {"name": "Swain", "ip": "172.16.1.116", "config": "rl-48p", "model": "48p"},
     {"name": "Thresh", "ip": "172.16.1.114", "config": "rl-50p", "model": "48p"},
+    {"name": "Taliyah", "ip": "172.16.1.139", "config": "rl-48p", "model": "48p"},
 
     {"name": "Udyr", "ip": "172.16.1.107", "config": "streamer-24+1p", "model": "24p"},
     {"name": "Viego", "ip": "172.16.1.110", "config": "streamer-24+1p", "model": "24p"},
@@ -48,5 +50,7 @@
     {"name": "streamer1", "ip": "172.16.1.108", "config": "streamer-24+1p", "model": "24p"},
     {"name": "streamer2", "ip": "172.16.1.102", "config": "streamer-24+1p", "model": "24p"},
 
-    {"name": "scene-joueur-1", "ip": "172.16.1.140", "config": "joueur-scene-48p", "model": "48p"}
+    {"name": "scene-admin1", "ip": "172.16.1.126", "config": "admin-scene-50p", "model": "48p"},
+
+    {"name": "scene-joueur1", "ip": "172.16.1.140", "config": "joueur-scene-48p", "model": "48p"}
 ]

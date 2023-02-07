@@ -15,7 +15,7 @@ listConfig = json.load(configFile)
 
 for switch in listSwitchs: 
     
-    i = input("next switch {} ([g]o/[n]ext)".format(switch["ip"]))
+    i = input("next switch {} ({}) ([g]o/[n]ext)".format(switch["ip"], switch["name"]))
     if i != "g":
         continue
 

@@ -103,7 +103,35 @@
 		}
 	},
 
-	"scene-joueur-24+1p": {
+	"joueur-scene-48p": {
+		"ports": {
+			"1-46": {
+				"untagged": 10,
+				"tagged": []
+			},
+
+			"47-48": {
+				"untagged": 10,
+				"tagged": [1]
+			}
+		}
+	},
+
+	"joueur-scene-50p": {
+		"ports": {
+			"1-48": {
+				"untagged": 10,
+				"tagged": []
+			},
+
+			"49-50": {
+				"untagged": 10,
+				"tagged": [1]
+			}
+		}
+	},
+
+	"joueur-scene-24+1p": {
 		"ports": {
 			"1-24": {
 				"untagged": 10,

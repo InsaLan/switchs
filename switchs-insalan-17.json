@@ -34,5 +34,19 @@
     {"name": "Yorick", "ip": "172.16.1.127", "config": "admin-scene-50p", "model": "48p"},
 
     {"name": "Zac", "ip": "172.16.1.111", "config": "partos-24+1p", "model": "24p"},
-    {"name": "Aatrox", "ip": "172.16.1.112", "config": "partos-24+1p", "model": "24p"}
+    {"name": "Aatrox", "ip": "172.16.1.112", "config": "partos-24+1p", "model": "24p"},
+
+
+    {"name": "cs1", "ip": "172.16.1.133", "config": "csgo-48p", "model": "48p"},
+    {"name": "cs2", "ip": "172.16.1.134", "config": "csgo-48p", "model": "48p"},
+
+    {"name": "lol1", "ip": "172.16.1.137", "config": "lol-48p", "model": "48p"},
+    {"name": "lol2", "ip": "172.16.1.136", "config": "lol-48p", "model": "48p"},
+
+    {"name": "tm1", "ip": "172.16.1.135", "config": "tm-48p", "model": "48p"},
+
+    {"name": "streamer1", "ip": "172.16.1.108", "config": "streamer-24+1p", "model": "24p"},
+    {"name": "streamer2", "ip": "172.16.1.102", "config": "streamer-24+1p", "model": "24p"},
+
+    {"name": "scene-joueur-1", "ip": "172.16.1.140", "config": "joueur-scene-48p", "model": "48p"}
 ]

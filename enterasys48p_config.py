@@ -98,7 +98,7 @@ set system login admin super-user enable  password :4eae55fe808cc25a83205b467c65
             if "untagged" in ports[port_range]:
                 untagged = ports[port_range]["untagged"]
                 for i in range(premier, deuxieme + 1):
-                    output.write(f"set port vlan {fege}.1.{i} {untagged}\n") 
+                    output.write(f"set port vlan {fege}.1.{i} {untagged} modify-egress\n") 
 
 
         output.write("""

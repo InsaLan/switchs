@@ -105,14 +105,9 @@
 
 	"joueur-scene-48p": {
 		"ports": {
-			"1-46": {
-				"untagged": 10,
+			"1-48": {
+				"untagged": 1,
 				"tagged": []
-			},
-
-			"47-48": {
-				"untagged": 10,
-				"tagged": [1]
 			}
 		}
 	},
@@ -120,13 +115,13 @@
 	"joueur-scene-50p": {
 		"ports": {
 			"1-48": {
-				"untagged": 10,
+				"untagged": 1,
 				"tagged": []
 			},
 
 			"49-50": {
-				"untagged": 10,
-				"tagged": [1]
+				"untagged": 1,
+				"tagged": []
 			}
 		}
 	},

@@ -133,14 +133,9 @@
 
 	"joueur-scene-24+1p": {
 		"ports": {
-			"1-24": {
-				"untagged": 10,
+			"1-25": {
+				"untagged": 1,
 				"tagged": []
-			},
-
-			"25": {
-				"untagged": 10,
-				"tagged": [1]
 			}
 		}
 	},

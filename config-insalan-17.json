@@ -3,27 +3,32 @@
 		"ports": {
 			"1-4": {
 				"untagged": 101,
-				"tagged": [1]
+				"tagged": []
 			},
 
 			"5-8": {
 				"untagged": 102,
-				"tagged": [1]
+				"tagged": []
 			},
 
             "9-12": {
 				"untagged": 103,
-				"tagged": [1]
+				"tagged": []
 			},
 
             "13-16": {
 				"untagged": 104,
-				"tagged": [1]
+				"tagged": []
 			},
 
-            "17-46": {
+            "17-45": {
 				"untagged": 100,
 				"tagged": []
+			},
+
+			"46": {
+				"untagged": 1,
+				"tagged": [100]
 			},
 
             "47-48": {
@@ -38,27 +43,32 @@
 		"ports": {
 			"1-4": {
 				"untagged": 101,
-				"tagged": [1]
+				"tagged": []
 			},
 
 			"5-8": {
 				"untagged": 102,
-				"tagged": [1]
+				"tagged": []
 			},
 
             "9-12": {
 				"untagged": 103,
-				"tagged": [1]
+				"tagged": []
 			},
 
             "13-16": {
 				"untagged": 104,
-				"tagged": [1]
+				"tagged": []
 			},
 
-            "17-48": {
+            "17-47": {
 				"untagged": 100,
 				"tagged": []
+			},
+
+			"48": {
+				"untagged": 1,
+				"tagged": [100]
 			},
 
             "49-50": {
@@ -73,27 +83,32 @@
 		"ports": {
 			"1-4": {
 				"untagged": 101,
-				"tagged": [1]
+				"tagged": []
 			},
 
 			"5-8": {
 				"untagged": 102,
-				"tagged": [1]
+				"tagged": []
 			},
 
 			"9-12": {
 				"untagged": 103,
-				"tagged": [1]
+				"tagged": []
 			},
 
 			"13-16": {
 				"untagged": 104,
-				"tagged": [1]
+				"tagged": []
 			},
 
-			"17-24": {
+			"17-23": {
 				"untagged": 100,
 				"tagged": []
+			},
+
+			"24": {
+				"untagged": 1,
+				"tagged": [100]
 			},
 
 			"25": {
@@ -266,12 +281,12 @@
                 "tagged": []
             },
 
-            "9-24": {
+            "9-22": {
                 "untagged": 1,
                 "tagged": []
             },
 
-            "25": {
+            "23-25": {
                 "untagged": 1,
                 "tagged": [100, 101, 102, 103, 104, 110, 111, 112]
             }

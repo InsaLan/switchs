@@ -102,7 +102,7 @@ set system login admin super-user enable  password :4eae55fe808cc25a83205b467c65
 
 
         output.write("""
-set snmp community hotlinemontreal securityname hotlinemontreal nonvolatile
+set snmp community hotlinemontreal securityname hotlinemontreal
 set snmp access hotlinemontreal security-model v2c read All notify All nonvolatile
 set snmp group public user hotlinemontreal security-model v2c nonvolatile
 """)

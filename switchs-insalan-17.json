@@ -53,5 +53,7 @@
 
     {"name": "scene-admin1", "ip": "172.16.1.126", "config": "admin-scene-50p", "model": "48p"},
 
-    {"name": "scene-joueur1", "ip": "172.16.1.140", "config": "joueur-scene-48p", "model": "48p"}
+    {"name": "scene-joueur1", "ip": "172.16.1.140", "config": "joueur-scene-48p", "model": "48p"},
+
+    {"name": "3hc", "ip": "172.16.1.106", "config": "dumb-24+1p", "model": "24p"}
 ]

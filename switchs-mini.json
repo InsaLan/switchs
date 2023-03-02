@@ -1,12 +1,12 @@
 [
-  {"name": "Aphelios", "ip": "172.16.1.108", "config": "sysrez-24+1p", "model": "24p"},
+  {"name": "Aphelios", "ip": "172.16.1.108", "config": "sysrez-24p", "model": "24p"},
   
-  {"name": "Bard", "ip": "172.16.1.110", "config": "admin-50p", "model": "48p"},
+  {"name": "Bard", "ip": "172.16.1.110", "config": "admin-24p", "model": "24p"},
 
-  {"name": "Caitlyn", "ip": "172.16.1.102", "config": "joueur-50p", "model": "48p"},
-  {"name": "Draven", "ip": "172.16.1.107", "config": "joueur-50p", "model": "48p"},
-  {"name": "Evelynn", "ip": "172.16.1.111", "config": "joueur-50p", "model": "48p"},
-  {"name": "Fizz", "ip": "172.16.1.106", "config": "joueur-50p", "model": "48p"},
-  {"name": "Gwen", "ip": "172.16.1.112", "config": "joueur-50p", "model": "48p"},
-  {"name": "Hecarim", "ip": "172.16.1.109", "config": "joueur-50p", "model": "48p"}
+  {"name": "Caitlyn", "ip": "172.16.1.102", "config": "joueur-24p", "model": "24p"},
+  {"name": "Draven", "ip": "172.16.1.107", "config": "joueur-24p", "model": "24p"},
+  {"name": "Evelynn", "ip": "172.16.1.111", "config": "joueur-24p", "model": "24p"},
+  {"name": "Fizz", "ip": "172.16.1.106", "config": "joueur-24p", "model": "24p"},
+  {"name": "Gwen", "ip": "172.16.1.112", "config": "joueur-24p", "model": "24p"},
+  {"name": "Hecarim", "ip": "172.16.1.109", "config": "joueur-24p", "model": "24p"}
 ]

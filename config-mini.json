@@ -1,33 +1,33 @@
 {
-	"joueurs-50p": {
+	"joueurs-24p": {
 		"ports": {
-			"1-48": {
+			"1-24": {
 				"untagged": 105,
 				"tagged": []
 			},
 
-			"49-50": {
+			"25": {
 				"untagged": 1,
 				"tagged": [ 105 ]
 			}
 		}
 	},
 
-	"admin-50p": {
+	"staff-24p": {
 		"ports": {
-			"1-48": {
-				"untagged": 100,
+			"1-24": {
+				"untagged": 110,
 				"tagged": []
 			},
 
-			"49-50": {
+			"25": {
 				"untagged": 1,
-				"tagged": [ 100 ]
+				"tagged": [ 110 ]
 			}
 		}
 	},
 
-	"sysrez-24+1p": {
+	"sysrez-24p": {
 		"ports": {
 			"1-8": {
 				"untagged": 1,
@@ -35,18 +35,18 @@
 			},
 
 			"9-16": {
-				"untagged": 100,
+				"untagged": 105,
 				"tagged": []
 			},
 
 			"17-24": {
-				"untagged": 105,
+				"untagged": 110,
 				"tagged": []
 			},
 
 			"25": {
 				"untagged": 1,
-				"tagged": [ 100, 105 ]
+				"tagged": [ 105, 110 ]
 			}
 		}
 	}

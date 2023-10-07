@@ -1,5 +1,5 @@
 {
-	"joueurs-24p": {
+	"joueur-24p": {
 		"ports": {
 			"1-24": {
 				"untagged": 105,
@@ -15,14 +15,18 @@
 
 	"staff-24p": {
 		"ports": {
-			"1-24": {
+			"1-2": {
+				"untagged": 1,
+				"tagged": [ 112 ]
+			},
+			"3-24": {
 				"untagged": 110,
 				"tagged": []
 			},
 
 			"25": {
 				"untagged": 1,
-				"tagged": [ 110 ]
+				"tagged": [ 110, 112 ]
 			}
 		}
 	},

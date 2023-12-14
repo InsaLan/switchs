@@ -31,7 +31,8 @@ class Procurve24pConfig:
 
         tmpConfigName = "tmpScript.cfg"
         # Début de l'écriture du fichier de config
-        output = open("/var/tftp/" + tmpConfigName, "w")
+        # output = open("/var/tftp/" + tmpConfigName, "w")
+        output = open("" + tmpConfigName, "w")
 
         # TODO put something here
         hostname = "script configured switch"
@@ -41,10 +42,12 @@ class Procurve24pConfig:
         for vlan in vlans:
             output.write("vlan {}\n".format(vlan))
             output.write(f"  name vlan{vlan}\n")
+            output.write(f"  ip address dhcp-bootp\n")
             for port_range, data in ports.items():
-                untagged = data["untagged"]
-                if untagged == vlan:
+                if data["untagged"] == vlan:
                     output.write(f"  untagged {port_range}\n")
+                elif vlan in data["tagged"]:
+                    output.write(f"  tagged {port_range}\n")
             output.write("  exit\n")
 
         output.write("password manager\n")

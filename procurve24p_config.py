@@ -31,18 +31,18 @@ class Procurve24pConfig:
 
         tmpConfigName = "tmpScript.cfg"
         # Début de l'écriture du fichier de config
-        # output = open("/var/tftp/" + tmpConfigName, "w")
-        output = open("" + tmpConfigName, "w")
+        output = open("/var/tftp/" + tmpConfigName, "w")
 
         # TODO put something here
         hostname = "script configured switch"
+        output.write("; J9279A Configuration Editor; Created on release #Y.11.51\n\n")
         output.write(f'hostname "{hostname}"\n')
         output.write('snmp-server community "hotlinemontreal" Unrestricted\n')
 
         for vlan in vlans:
             output.write("vlan {}\n".format(vlan))
             output.write(f"  name vlan{vlan}\n")
-            output.write(f"  ip address dhcp-bootp\n")
+            output.write("  ip address dhcp-bootp\n")
             for port_range, data in ports.items():
                 if data["untagged"] == vlan:
                     output.write(f"  untagged {port_range}\n")

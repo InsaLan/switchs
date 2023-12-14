@@ -62,9 +62,11 @@ class Procurve24pConfig:
 
         with Telnet(self.ip) as tn:
             print("Authenticating...")
-            tn.read_until(b"Password:")
+            buf = tn.read_until(b"Password:")
+            print(buf.decode())
             tn.write(self.password.encode() + b"\n")
-            tn.read_until(b"#")
+            buf = tn.read_until(b"#")
+            print(buf.decode())
 
             print(f"Copying config from {tftp_server_ip}...")
             tn.write(
@@ -74,7 +76,8 @@ class Procurve24pConfig:
                 + tmpConfigName.encode()
                 + b"\n"
             )
-            tn.read_until(b"Device may be rebooted, do you want to continue [y/n]?")
+            buf = tn.read_until(b"Device may be rebooted, do you want to continue [y/n]?")
+            print(buf.decode())
             tn.write(b"y")
 
         print("Done!")

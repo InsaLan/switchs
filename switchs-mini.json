@@ -1,5 +1,5 @@
 [
-  {"name": "Aphelios", "ip": "172.16.1.108", "config": "sysrez-24p", "model": "24p"},
+  {"name": "Aphelios", "ip": "172.16.1.108", "config": "joueur-24p", "model": "24p"},
   
   {"name": "Bard", "ip": "172.16.1.110", "config": "staff-24p", "model": "24p"},
 

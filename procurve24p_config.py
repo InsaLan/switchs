@@ -97,14 +97,17 @@ def bypass_dumb_prompts(tn, password):
     # this is dumb
     # keep giving the switch what it wants until it doesn't ask for anything anymore
     idx = 1
+    ls_users = [b'manager', b'admin']
+    i_usr = 0
     while idx >= 0:
         idx, match, buf = tn.expect([b"Password", b"continue", b"Username"], timeout=3)
         print(buf)
         if match is None:
             break
         if match.group(0).lower() == b"username":
-            print("username requested. sending 'manager'")
-            tn.write(b"manager\n")
+            print(f"username requested. sending {ls_users[i_usr]}")
+            tn.write(ls_users[i_usr] + b"\n")
+            i_usr += 1
 
         elif match.group(0).lower() == b"continue":
             print("continue requested. sending newline")

@@ -94,6 +94,8 @@ class Procurve24pConfig:
         print("Done!")
 
 def bypass_dumb_prompts(tn, password):
+    # this is dumb
+    # keep giving the switch what it wants until it doesn't ask for anything anymore
     idx = 1
     while idx >= 0:
         idx, match, buf = tn.expect([b"Password", b"continue", b"Username"], timeout=3)

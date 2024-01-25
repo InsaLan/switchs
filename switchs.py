@@ -48,7 +48,7 @@ for switch in listSwitchs:
         s.configure()
 
     elif switch["model"] == "24p-procurve":
-        s = Procurve24pConfig(switch["ip"], sys.argv[3], listConfig[switch["config"]])
+        s = Procurve24pConfig(switch["ip"], switch["name"], sys.argv[3], switch["model_id"], listConfig[switch["config"]])
         s.configure()
 
     else:

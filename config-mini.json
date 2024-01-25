@@ -1,4 +1,18 @@
 {
+	"joueur-26p": {
+		"ports": {
+			"1-25": {
+				"untagged": 105,
+				"tagged": []
+			},
+
+			"26": {
+				"untagged": 1,
+				"tagged": [ 105 ]
+			}
+		}
+	},
+
 	"joueur-24p": {
 		"ports": {
 			"1-23": {

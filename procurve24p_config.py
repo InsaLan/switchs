@@ -2,10 +2,20 @@
 
 from telnetlib import Telnet
 
+import string
+
+def printbytes(x):
+    #x = x.decode()
+    #x = "".join(filter(lambda x: x.isalnum() or x.isspace(), x))
+    # TODO: make this print cleanly
+    print(x)
+
 
 class Procurve24pConfig:
-    def __init__(self, ip, password, data):
+    def __init__(self, ip, name, password, model_id, data):
         self.ip = ip
+        self.name = name
+        self.model_id = model_id
         self.data = data
         self.password = password
 
@@ -33,15 +43,13 @@ class Procurve24pConfig:
         # Début de l'écriture du fichier de config
         output = open("/var/tftp/" + tmpConfigName, "w")
 
-        # TODO put something here
-        hostname = "script configured switch"
-        output.write("; J9279A Configuration Editor; Created on release #Y.11.51\n\n")
-        output.write(f'hostname "{hostname}"\n')
+        output.write(f"; {self.model_id} Configuration Editor; Created on release #Y.11.51\n\n")
+        output.write(f'hostname "{self.name}"\n')
         output.write('snmp-server community "hotlinemontreal" Unrestricted\n')
 
         for vlan in vlans:
             output.write("vlan {}\n".format(vlan))
-            output.write(f"  name vlan{vlan}\n")
+            output.write(f'  name "vlan{vlan}"\n')
             output.write("  ip address dhcp-bootp\n")
             for port_range, data in ports.items():
                 if data["untagged"] == vlan:
@@ -63,12 +71,13 @@ class Procurve24pConfig:
         tftp_server_ip = "172.16.1.1"
 
         with Telnet(self.ip) as tn:
-            print("Authenticating...")
-            buf = tn.read_until(b"Password:")
-            print(buf.decode())
-            tn.write(self.password.encode() + b"\n")
-            buf = tn.read_until(b"#")
-            print(buf.decode())
+            bypass_dumb_prompts(tn, self.password)
+
+            #buf = tn.read_until(b"#", timeout=2)
+            #if b"#" not in buf:
+            #    print("shit broke fam")
+
+            #printbytes(buf)
 
             print(f"Copying config from {tftp_server_ip}...")
             tn.write(
@@ -78,13 +87,34 @@ class Procurve24pConfig:
                 + tmpConfigName.encode()
                 + b"\n"
             )
-            buf = tn.read_until(
-                b"Device may be rebooted, do you want to continue [y/n]?"
-            )
-            print(buf.decode())
+            buf = tn.read_until(b"[y/n]", timeout=1)
+            printbytes(buf)
             tn.write(b"y")
 
         print("Done!")
+
+def bypass_dumb_prompts(tn, password):
+    idx = 1
+    while idx >= 0:
+        idx, match, buf = tn.expect([b"Password", b"continue", b"Username"], timeout=3)
+        print(buf)
+        if match is None:
+            break
+        if match.group(0).lower() == b"username":
+            print("username requested. sending 'manager'")
+            tn.write(b"manager\n")
+
+        elif match.group(0).lower() == b"continue":
+            print("continue requested. sending newline")
+            tn.write(b"\n")
+            #print("\n\n[WARNING] (SPOOKY) No password configured! you should configure it manually.\n\n")
+
+        elif match.group(0).lower() == b"password":
+            print("Authenticating...")
+            tn.write(password.encode() + b"\n")
+        else:
+            print(f"Shit broke my dude, match={match}")
+            break
 
 
 if __name__ == "__main__":

@@ -1,5 +1,5 @@
 {
-	"joueur-24p-procurve": {
+	"joueur-24p": {
 		"ports": {
 			"1-23": {
 				"untagged": 105,
@@ -13,7 +13,49 @@
 		}
 	},
 
-	"joueur-24p": {
+	"staff-24p": {
+		"ports": {
+			"1-2": {
+				"untagged": 1,
+				"tagged": [ 112 ]
+			},
+			"3-23": {
+				"untagged": 110,
+				"tagged": []
+			},
+
+			"24": {
+				"untagged": 1,
+				"tagged": [ 110, 112 ]
+			}
+		}
+	},
+
+	"sysrez-24p": {
+		"ports": {
+			"1-8": {
+				"untagged": 1,
+				"tagged": []
+			},
+
+			"9-16": {
+				"untagged": 105,
+				"tagged": []
+			},
+
+			"17-23": {
+				"untagged": 110,
+				"tagged": []
+			},
+
+			"24": {
+				"untagged": 1,
+				"tagged": [ 105, 110 ]
+			}
+		}
+	},
+
+	"joueur-25p": {
 		"ports": {
 			"1-24": {
 				"untagged": 105,
@@ -27,7 +69,7 @@
 		}
 	},
 
-	"staff-24p": {
+	"staff-25p": {
 		"ports": {
 			"1-2": {
 				"untagged": 1,
@@ -45,7 +87,7 @@
 		}
 	},
 
-	"sysrez-24p": {
+	"sysrez-25p": {
 		"ports": {
 			"1-8": {
 				"untagged": 1,

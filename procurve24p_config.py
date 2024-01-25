@@ -54,7 +54,9 @@ class Procurve24pConfig:
 
         output.close()
 
-        print("Done creating config")
+        print("Config :")
+        output = open("/var/tftp/" + tmpConfigName, "r")
+        print(output.read())
 
         # 4 - we send the config!
 
@@ -76,7 +78,9 @@ class Procurve24pConfig:
                 + tmpConfigName.encode()
                 + b"\n"
             )
-            buf = tn.read_until(b"Device may be rebooted, do you want to continue [y/n]?")
+            buf = tn.read_until(
+                b"Device may be rebooted, do you want to continue [y/n]?"
+            )
             print(buf.decode())
             tn.write(b"y")
 
@@ -100,4 +104,3 @@ if __name__ == "__main__":
 
     switch = Procurve24pConfig(f"172.16.1.1{switch_number}", switch_password, data)
     switch.configure()
-

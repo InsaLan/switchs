@@ -19,7 +19,7 @@ for switch in listSwitchs:
     if i != "g":
         continue
 
-    if str(switch["model"]) == "24p":
+    if str(switch["model"]) == "24p-enterasys":
         with Telnet(switch["ip"]) as tn:
             s = Enterasys24p(tn)
 

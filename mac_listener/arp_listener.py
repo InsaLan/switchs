@@ -4,12 +4,12 @@ import re
 import time
 import csv
 
-allowed_ifaces = ["eno2.1@eno2", "wlp0s20f3"]
-models = ["Enterasys 24p", "Enterasys 48p", "ProCurve"]
+allowed_ifaces = ["eno2.1@eno2", "wlp0s20f3", "eno2.1", "eno2.150"]
+models = ["Enterasys 24p", "Enterasys 48p", "Enterasys 50p", "ProCurve"]
 models_help = ", ".join([f"{model_id}: {models[model_id]}" for model_id in range(len(models))])
 output_filename = "output.txt"
 periodic_table = {}
-arp_row_pattern = re.compile(r"^((?:[0-9]{1,3}\.){3}[0-9]{1,3})\s+\w+\s+((?:[0-9A-Fa-f]{2}[:-]){5}(?:[0-9A-Fa-f]{2}))\s+\w+\s+(\w+)$")
+arp_row_pattern = re.compile(r"^((?:[0-9]{1,3}\.){3}[0-9]{1,3})\s+\w+\s+((?:[0-9A-Fa-f]{2}[:-]){5}(?:[0-9A-Fa-f]{2}))\s+\w+\s+([\w.]+)$")
 
 known_macs = []
 

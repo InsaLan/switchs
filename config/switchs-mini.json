@@ -8,7 +8,7 @@
 
   {"name": "Caitlyn", "ip": "172.16.1.102", "config": "joueur-25p", "model": "24p-enterasys"},
   {"name": "Draven", "ip": "172.16.1.107", "config": "joueur-25p", "model": "24p-enterasys"},
-  {"name": "Evelynn", "ip": "172.16.1.111", "config": "joueur-25p", "model": "24p-enterasys"},
+  {"name": "Evelynn", "ip": "172.16.1.111", "config": "staff-25p", "model": "24p-enterasys"},
   {"name": "Fizz", "ip": "172.16.1.106", "config": "joueur-25p", "model": "24p-enterasys"},
   {"name": "Gwen", "ip": "172.16.1.112", "config": "joueur-25p", "model": "24p-enterasys"},
   {"name": "Hecarim", "ip": "172.16.1.109", "config": "staff-25p", "model": "24p-enterasys"}

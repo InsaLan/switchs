@@ -43,7 +43,7 @@ for switch in listSwitchs:
             s.afterVlan()
             s.saveConfig()
 
-    elif switch["model"] == "48p":
+    elif switch["model"] == "48p-enterasys":
         s = Enterasys48pConfig(switch["ip"], sys.argv[3], listConfig[switch["config"]])
         s.configure()
 

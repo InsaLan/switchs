@@ -1,0 +1,295 @@
+{   
+	"admin-scene-48p": {
+		"ports": {
+			"1-16": {
+				"untagged": 114,
+				"tagged": []
+			},
+
+			"17-20": {
+				"untagged": 103,
+				"tagged": []
+			},
+
+			"21-26": {
+				"untagged": 101,
+				"tagged": []
+			},
+
+			"29-32": {
+				"untagged": 102,
+				"tagged": []
+			},
+
+			"33-46": {
+				"untagged": 111,
+				"tagged": []
+			},
+
+			"47-48": {
+				"untagged": 1,
+				"tagged": [101, 102, 103, 111, 114]
+			}
+
+		}
+	},
+
+	"dumb-48p": {
+		"ports": {
+			"1-48": {
+				"untagged": 1,
+				"tagged": []
+			}
+		}
+	},
+
+	"dumb-25p": {
+		"ports": {
+			"1-25": {
+				"untagged": 1,
+				"tagged": []
+			}
+		}
+	},
+
+	"streamer-48p": {
+		"ports": {
+			"1-16": {
+				"untagged": 101,
+				"tagged": []
+			},
+
+			"17-32": {
+				"untagged": 103,
+				"tagged": []
+			},
+
+			"33-46": {
+				"untagged": 102,
+				"tagged": []
+			},
+
+			"47-48": {
+				"untagged": 1,
+				"tagged": [101, 102, 103]
+			}
+
+		}
+	},
+
+	"sysrez-48p": {
+		"ports": {
+			"1": {
+				"untagged": 100,
+				"tagged": []
+			},
+
+			"2": {
+				"untagged": 101,
+				"tagged": []
+			},
+
+			"3": {
+				"untagged": 102,
+				"tagged": []
+			},
+
+			"4": {
+				"untagged": 103,
+				"tagged": []
+			},
+
+			"5": {
+				"untagged": 111,
+				"tagged": []
+			},
+
+			"6": {
+				"untagged": 113,
+				"tagged": []
+			},
+
+			"7": {
+				"untagged": 114,
+				"tagged": []
+			},
+
+			"8-46": {
+				"untagged": 1,
+				"tagged": []
+			},
+
+			"47-48": {
+				"untagged": 1,
+				"tagged": [100, 101, 102, 103, 111, 113, 114]
+			}
+		}
+	},
+
+	"sysrez-25p": {
+		"ports": {
+			"1": {
+				"untagged": 100,
+				"tagged": []
+			},
+
+			"2": {
+				"untagged": 101,
+				"tagged": []
+			},
+
+			"3": {
+				"untagged": 102,
+				"tagged": []
+			},
+
+			"4": {
+				"untagged": 103,
+				"tagged": []
+			},
+
+			"5": {
+				"untagged": 111,
+				"tagged": []
+			},
+
+			"6": {
+				"untagged": 113,
+				"tagged": []
+			},
+
+			"7": {
+				"untagged": 114,
+				"tagged": []
+			},
+
+			"8-22": {
+				"untagged": 1,
+				"tagged": []
+			},
+
+			"23-25": {
+				"untagged": 1,
+				"tagged": [100, 101, 102, 103, 111, 113, 114]
+			}
+		}
+	},
+
+	"admin-48p": {
+		"ports": {
+			"1-46": {
+				"untagged": 100,
+				"tagged": []
+			},
+
+			"47-48": {
+				"untagged": 1,
+				"tagged": [100]
+			}
+
+		}
+	},
+
+	"lol-48p": {
+		"ports": {
+			"1-46": {
+				"untagged": 103,
+				"tagged": []
+			},
+
+			"47-48": {
+				"untagged": 1,
+				"tagged": [103]
+			}
+		}
+	},
+
+	"lol-50p": {
+		"ports": {
+			"1-48": {
+				"untagged": 103,
+				"tagged": []
+			},
+
+			"49-50": {
+				"untagged": 1,
+				"tagged": [103]
+			}
+		}
+	},
+
+	"cs2-48p": {
+		"ports": {
+			"1-46": {
+				"untagged": 101,
+				"tagged": []
+			},
+
+			"47-48": {
+				"untagged": 1,
+				"tagged": [101]
+			}
+
+		}
+	},
+
+	"cs2-50p": {
+		"ports": {
+			"1-48": {
+				"untagged": 101,
+				"tagged": []
+			},
+
+			"49-50": {
+				"untagged": 1,
+				"tagged": [101]
+			}
+
+		}
+	},
+
+	"tm-48p": {
+		"ports": {
+			"1-46": {
+				"untagged": 102,
+				"tagged": []
+			},
+
+			"47-48": {
+				"untagged": 1,
+				"tagged": [102]
+			}
+
+		}
+	},
+
+	"tm-50p": {
+		"ports": {
+			"1-48": {
+				"untagged": 102,
+				"tagged": []
+			},
+
+			"49-50": {
+				"untagged": 1,
+				"tagged": [102]
+			}
+
+		}
+	},
+
+	"partos-48p": {
+		"ports": {
+			"1-46": {
+				"untagged": 114,
+				"tagged": []
+			},
+
+			"47-48": {
+				"untagged": 1,
+				"tagged": [114]
+			}
+
+		}
+	}
+}

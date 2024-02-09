@@ -77,6 +77,31 @@
 		}
 	},
 
+	"streamer-25p": {
+		"ports": {
+			"1-8": {
+				"untagged": 101,
+				"tagged": []
+			},
+
+			"9-16": {
+				"untagged": 103,
+				"tagged": []
+			},
+
+			"17-24": {
+				"untagged": 102,
+				"tagged": []
+			},
+
+			"25": {
+				"untagged": 1,
+				"tagged": [101, 102, 103]
+			}
+
+		}
+	},
+
 	"sysrez-48p": {
 		"ports": {
 			"1": {
@@ -190,6 +215,21 @@
 		}
 	},
 
+	"admin-25p": {
+		"ports": {
+			"1-24": {
+				"untagged": 100,
+				"tagged": []
+			},
+
+			"25": {
+				"untagged": 1,
+				"tagged": [100]
+			}
+
+		}
+	},
+
 	"lol-48p": {
 		"ports": {
 			"1-46": {
@@ -291,5 +331,21 @@
 			}
 
 		}
-	}
+	},
+
+	"partos-25p": {
+		"ports": {
+			"1-24": {
+				"untagged": 114,
+				"tagged": []
+			},
+
+			"25": {
+				"untagged": 1,
+				"tagged": [114]
+			}
+
+		}
+	},
+	
 }

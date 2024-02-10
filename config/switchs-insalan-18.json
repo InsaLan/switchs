@@ -2,7 +2,7 @@
     {"name": "Helium", "ip": "172.16.1.102", "config": "partos-25p", "model": "24p-enterasys"},
     {"name": "Carbon", "ip": "172.16.1.106", "config": "streamer-25p", "model": "24p-enterasys"},
     {"name": "Nitrogen", "ip": "172.16.1.107", "config": "streamer-25p", "model": "24p-enterasys"},
-    {"name": "Oxygen", "ip": "172.16.1.108", "config": "streamer", "model": "24p-enterasys"},
+    {"name": "Oxygen", "ip": "172.16.1.108", "config": "streamer-25p", "model": "24p-enterasys"},
     {"name": "Neon", "ip": "172.16.1.110", "config": "dumb-25p", "model": "24p-enterasys"},
     {"name": "Sodium", "ip": "172.16.1.111", "config": "dumb-25p", "model": "24p-enterasys"},
     {"name": "Magnesium", "ip": "172.16.1.112", "config": "dumb-25p", "model": "24p-enterasys"},
@@ -27,7 +27,7 @@
     {"name": "Arsenic", "ip": "172.16.1.133", "config": "tm-48p", "model": "48p-enterasys"},
     {"name": "Selenium", "ip": "172.16.1.134", "config": "admin-scene-48p", "model": "48p-enterasys"},
     {"name": "Strontium", "ip": "172.16.1.138", "config": "admin-48p", "model": "48p-enterasys"},
-    {"name": "Yttrium", "ip": "172.16.1.139", "config": "cs-48p", "model": "48p-enterasys"},
+    {"name": "Yttrium", "ip": "172.16.1.139", "config": "cs2-48p", "model": "48p-enterasys"},
     {"name": "Zirconium", "ip": "172.16.1.140", "config": "lol-48p", "model": "48p-enterasys"},
     {"name": "Xenon", "ip": "172.16.1.154", "config": "sysrez-25p", "model": "24p-procurve", "model_id": "J9087A"}
 ]

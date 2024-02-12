@@ -13,7 +13,6 @@
     {"name": "Chlorine", "ip": "172.16.1.117", "config": "lol-50p", "model": "48p-enterasys"},
     {"name": "Argon", "ip": "172.16.1.118", "config": "lol-50p", "model": "48p-enterasys"},
     {"name": "Potassium", "ip": "172.16.1.119", "config": "lol-50p", "model": "48p-enterasys"},
-    {"name": "Calcium", "ip": "172.16.1.120", "config": "sysrez-50p", "model": "48p-enterasys"},
     {"name": "Scandium", "ip": "172.16.1.121", "config": "lol-50p", "model": "48p-enterasys"},
     {"name": "Titanium", "ip": "172.16.1.122", "config": "cs2-50p", "model": "48p-enterasys"},
     {"name": "Vanadium", "ip": "172.16.1.123", "config": "cs2-50p", "model": "48p-enterasys"},
@@ -34,5 +33,7 @@
     {"name": "Strontium", "ip": "172.16.1.138", "config": "admin-48p", "model": "48p-enterasys"},
     {"name": "Yttrium", "ip": "172.16.1.139", "config": "cs2-48p", "model": "48p-enterasys"},
     {"name": "Zirconium", "ip": "172.16.1.140", "config": "lol-48p", "model": "48p-enterasys"},
+    {"name": "Niobium", "ip": "172.16.1.141", "config": "sysrez-48p", "model": "48p-enterasys"},
+    {"name": "Molybdenum", "ip": "172.16.1.142", "config": "streamer-48p", "model": "48p-enterasys"},
     {"name": "Xenon", "ip": "172.16.1.154", "config": "sysrez-25p", "model": "24p-procurve", "model_id": "J9087A"}
 ]

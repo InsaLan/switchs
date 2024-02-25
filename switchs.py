@@ -66,7 +66,7 @@ def main():
         listConfig = json.load(f)
 
     if args.switch is not None:
-        switch_ip = f"172.16.1.1{args.switch}"
+        switch_ip = f"172.16.1.1{args.switch.zfill(2)}"
         switch = list(filter(lambda x: x["ip"] == switch_ip, listSwitchs))[0]
         config = listConfig[switch["config"]]
         configure_switch(switch, config, args.switch_password)
@@ -76,7 +76,7 @@ def main():
             if i == "q":
                 break
             if i == "g":
-                configure_switch(switch, listConfig[switch["config"]], args.switchPassword)
+                configure_switch(switch, listConfig[switch["config"]], args.switch_password)
 
 
 if __name__ == "__main__":

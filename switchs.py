@@ -48,22 +48,21 @@ def configure_switch(switch, config, switch_password):
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Configure switches")
+    parser = argparse.ArgumentParser(description="Configure switches automatically")
 
-    parser.add_argument("switch_file", help="File containing the list of switches")
+    parser.add_argument("switchs_file", help="JSON file containing the list of switches")
     parser.add_argument(
-        "config_file", help="File containing the list of configurations"
+        "configs_file", help="JSON file containing the list of configurations"
     )
     parser.add_argument("switch_password", help="Password for the switches")
-
-    parser.add_argument("--switch", "-s", help="Switch to configure (by number)")
+    parser.add_argument("--switch", "-s", help="Switch to configure (by number)", metavar="NUMBER")
 
     args = parser.parse_args()
 
-    with open(args.switch_file, "r") as f:
+    with open(args.switchs_file, "r") as f:
         listSwitchs = json.load(f)
 
-    with open(args.config_file, "r") as f:
+    with open(args.configs_file, "r") as f:
         listConfig = json.load(f)
 
     if args.switch is not None:

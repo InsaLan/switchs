@@ -4,14 +4,45 @@ This tool sets up the switches used for the InsaLan tournament.
 
 ## Configuration
 
-The tool needs two JSON files : the first one defines configuration templates and the second one gives the list of all the switches to configure along with their configuration template.
+The tool needs two JSON files : 
+- `switchs_file`: contains the list of all the switches to configure and
+the configuration chosen for each switch
+- `configs_file`: describes the configurations to apply (which ports are
+tagged/untagged and on which VLANs)
 
 > [!NOTE]
 > All configuration files must be in the `/config` directory.
 
+## How to use it?
+
+The main entrypoint is `switchs.py`.
+```
+usage: switchs.py [-h] [--switch NUMBER] switchs_file configs_file switch_password
+
+Configure switches automatically
+
+positional arguments:
+  switchs_file          JSON file containing the list of switches
+  configs_file          JSON file containing the list of configurations
+  switch_password       Password for the switches
+
+options:
+  -h, --help            show this help message and exit
+  --switch NUMBER, -s NUMBER
+                        Switch to configure (by number)
+```
+
+For example, if you want to configure the switch number 24 (with IP address `172.16.1.124`), you would run the following command:
+
+```
+python3 switchs.py config/switches.json config/config.json password -s 24
+```
+
+Run it without `--switch` to be prompted for each switch in the list.
+
 ## How it works?
 
-The main entrypoint is `switchs.py`: you call it with `python3 switchs.py <switch_file> <config_file> <switch_password>`.  
+
 This script detects the model of each switch from the switch file and then automatically calls the right configuration script depending on the model (`enterasys24p`, `enterasys48p`, `procurve24p`...).
 
 `enterasys24p` connects via _telnet_ and sends all configuration commands directly through the virtual terminal.  

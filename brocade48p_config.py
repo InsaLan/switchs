@@ -32,24 +32,39 @@ class Brocade48pConfig:
         output = open("/var/tftp/" + tmpConfigName, "w")
 
         # system
-        output.write("""
-ver 08.0.30qT311
-
+        output.write("""ver 08.0.30qT311
+!
 stack unit 1
   module 1 icx6430-48p-poe-port-management-module
-  module 2 icx6430-sfp-4port-4g-module\n\n\n\n
+  module 2 icx6430-sfp-4port-4g-module\n!\n!\n!\n!
 """)
         for vlan in vlans:
             output.write(f"vlan {vlan} name vlan{vlan} by port\n")
             for port_range, data in ports.items():
-                if data["untagged"] == vlan:
-                    output.write(f" untagged ethe {port_range_to_brocade(port_range)}\n")
-                elif vlan in data["tagged"]:
+                if vlan in data["tagged"]:
                     output.write(f" tagged ethe {port_range_to_brocade(port_range)}\n")
-            output.write(" no spanning-tree\n\n")
+                elif data["untagged"] == vlan:
+                    output.write(f" untagged ethe {port_range_to_brocade(port_range)}\n")
+            output.write(" no spanning-tree\n!\n")
         
-        output.write("""
-\n\n
+        output.write(f"""!\n!\n!\n!
+aaa authentication login default local
+enable super-user-password 8 $1$wJqPa9Z9$1413ex.NJ0sx93w996mJi1
+hostname management
+ip address {self.ip} 255.255.255.0 dynamic
+ip default-gateway 172.16.1.1
+!
+!
+clock timezone us Alaska
+web-management https
+!
+!
+!
+!
+!
+!
+!
+end
 """)
         #output.write("end\n")
 
@@ -61,23 +76,23 @@ stack unit 1
 
         tftp_server_ip = "172.16.1.1"
 
-        with Telnet(self.ip) as tn: #check all commented parts with real switch
+        with Telnet(self.ip) as tn:
             print("Authenticating...")
-            '''tn.read_until(b"Username:")
-            tn.write(b"admin\n")
+            tn.read_until(b">")
+            tn.write(b"enable\n")
             tn.read_until(b"Password:")
             tn.write(self.password.encode()+b"\n")
-            tn.read_until(b"->")
-            '''
+            tn.read_until(b"#")
             
             print(f"Copying and applying config from {tftp_server_ip}...")
             tn.write(b"copy tftp startup-config " + tftp_server_ip.encode() + b" " + tmpConfigName.encode())
-            '''
-            tn.read_until(b"->")
+            tn.read_until(b"Download startup-config from TFTP server done.")
+            tn.read_until(b"#")
             
-            tn.read_until(b"Are you sure you want to continue (y/n) [n]?")
+            print("Config saved, rebooting switch...")
+            tn.write(b"reload\n")
+            tn.read_until(b"Are you sure? (enter 'y' or 'n'):")
             tn.write(b"y")
-            '''
 
         print("Done!")
 

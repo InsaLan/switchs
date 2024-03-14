@@ -40,11 +40,12 @@ stack unit 1
 """)
         for vlan in vlans:
             output.write(f"vlan {vlan} name vlan{vlan} by port\n")
-            for port_range, data in ports.items():
-                if vlan in data["tagged"]:
-                    output.write(f" tagged ethe {port_range_to_brocade(port_range)}\n")
-                elif data["untagged"] == vlan:
-                    output.write(f" untagged ethe {port_range_to_brocade(port_range)}\n")
+            if vlan != 1: # Vlan #1's config is done later via dual mode
+                for port_range, data in ports.items():
+                    if vlan in data["tagged"]:
+                        output.write(f" tagged ethe {port_range_to_brocade(port_range)}\n")
+                    elif data["untagged"] == vlan:
+                        output.write(f" untagged ethe {port_range_to_brocade(port_range)}\n")
             output.write(" no spanning-tree\n!\n")
         
         output.write(f"""!\n!\n!\n!
@@ -55,9 +56,27 @@ ip default-gateway 172.16.1.1
 !
 !
 clock timezone us Alaska
-web-management https
-!
-!
+web-management https\n""")
+        
+        for port_range, data in ports.items():
+            if data["untagged"] == 1 :
+                if "-" in port_range:
+                    separation = port_range.split("-")
+                    premier = int(separation[0])
+                    deuxieme = int(separation[1])
+                    if premier <= 48 and deuxieme > 48:
+                        for i in range(premier, 49):
+                            output.write(f"interface ethernet 1/1/{i}\n"
+                            " dual-mode\n!\n")
+                    else:
+                        for i in range(premier, deuxieme+1):
+                            output.write(f"interface ethernet 1/1/{i}\n"
+                            " dual-mode\n!\n")
+                else:
+                    output.write(f"interface ethernet 1/1/{port_range}\n"
+                    " dual-mode\n!\n")
+        
+        output.write(f"""!
 !
 !
 !

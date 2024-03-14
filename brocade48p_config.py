@@ -48,7 +48,6 @@ stack unit 1
             output.write(" no spanning-tree\n!\n")
         
         output.write(f"""!\n!\n!\n!
-aaa authentication login default local
 enable super-user-password 8 $1$wJqPa9Z9$1413ex.NJ0sx93w996mJi1
 hostname management
 ip address {self.ip} 255.255.255.0 dynamic
@@ -84,7 +83,7 @@ end
             
             print(f"Copying and applying config from {tftp_server_ip}...")
             tn.write(b"copy tftp startup-config " + tftp_server_ip.encode() + b" " + tmpConfigName.encode() + b"\n")
-            print(tn.read_until(b"Download startup-config from TFTP server done."))
+            tn.read_until(b"Download startup-config from TFTP server done.")
            
             print("Config saved, rebooting switch...")
             tn.write(b"reload\n")

@@ -83,13 +83,14 @@ end
             tn.read_until(b"#")
             
             print(f"Copying and applying config from {tftp_server_ip}...")
-            tn.write(b"copy tftp startup-config " + tftp_server_ip.encode() + b" " + tmpConfigName.encode())
-            tn.read_until(b"Download startup-config from TFTP server done.")
-            tn.read_until(b"#")
-            
+            tn.write(b"copy tftp startup-config " + tftp_server_ip.encode() + b" " + tmpConfigName.encode() + b"\n")
+            print(tn.read_until(b"Download startup-config from TFTP server done."))
+           
             print("Config saved, rebooting switch...")
             tn.write(b"reload\n")
             tn.read_until(b"Are you sure? (enter 'y' or 'n'):")
+            tn.write(b"y")
+            tn.read_until(b"(enter 'y' or 'n'):", 10)
             tn.write(b"y")
 
         print("Done!")

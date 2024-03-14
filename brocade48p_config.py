@@ -66,8 +66,6 @@ web-management https
 !
 end
 """)
-        #output.write("end\n")
-
         output.close()
 
         print("Done creating config")
@@ -96,7 +94,7 @@ end
 
         print("Done!")
 
-def port_range_to_brocade(port_range):
+def port_range_to_brocade(port_range): # Convert "1-48" to "1/1/1 to 1/1/48" for example, weird brocade syntax
     if "-" in port_range:
         separation = port_range.split("-")
         premier = int(separation[0])
@@ -108,7 +106,7 @@ def port_range_to_brocade(port_range):
     else:
         return "1/1/{}".format(port_range)
 
-if __name__ == "__main__":
+if __name__ == "__main__": # If this file is executed directly instead of via switchs.py
     import sys, json
     
     if len(sys.argv) < 4:

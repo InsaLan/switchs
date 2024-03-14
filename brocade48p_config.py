@@ -49,7 +49,7 @@ stack unit 1
             output.write(" no spanning-tree\n!\n")
         
         output.write(f"""!\n!\n!\n!
-enable super-user-password 8 $1$wJqPa9Z9$1413ex.NJ0sx93w996mJi1
+enable super-user-password {self.password}
 hostname management
 ip address {self.ip} 255.255.255.0 dynamic
 ip default-gateway 172.16.1.1

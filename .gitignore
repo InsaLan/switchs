@@ -1,3 +1,5 @@
 __pycache__
 *.swp
 debug/*
+mac_listener/output.txt
+mac_listener/sorted_output.txt

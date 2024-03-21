@@ -61,7 +61,7 @@ def read_arp(first_run = False):
 
     arp_rows = [parse_row(row) for row in arp_rows]
     arp_rows = [row for row in arp_rows if row != None]
-    
+
     added = False
     for row in arp_rows:
         if not first_run and filter_device(row):

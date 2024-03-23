@@ -5,7 +5,7 @@ import time
 import csv
 
 allowed_ifaces = ["eno2.1@eno2", "wlp0s20f3", "eno2.1", "eno2.150"]
-models = ["Enterasys 24p", "Enterasys 48p", "Enterasys 50p", "ProCurve"]
+models = ["Enterasys 24p", "Enterasys 48p", "Enterasys 50p", "ProCurve 24p", "Brocade 48p"]
 models_help = ", ".join([f"{model_id}: {models[model_id]}" for model_id in range(len(models))])
 output_filename = "output.txt"
 periodic_table = {}

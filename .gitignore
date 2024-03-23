@@ -3,3 +3,4 @@ __pycache__
 debug/*
 mac_listener/output.txt
 mac_listener/sorted_output.txt
+mac_listener/ips.txt

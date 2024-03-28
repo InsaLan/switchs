@@ -50,6 +50,8 @@ stack unit 1
         
         output.write(f"""!\n!\n!\n!
 enable super-user-password {self.password}
+snmp-server community hotlinemontreal ro
+!
 hostname management
 ip address {self.ip} 255.255.255.0 dynamic
 ip default-gateway 172.16.1.1

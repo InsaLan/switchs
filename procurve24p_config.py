@@ -2,13 +2,12 @@
 
 from telnetlib import Telnet
 
-import string
+import re
 
 def printbytes(x):
-    #x = x.decode()
-    #x = "".join(filter(lambda x: x.isalnum() or x.isspace(), x))
-    # TODO: make this print cleanly
-    print(x)
+    regex = re.compile(b"\\x1b[^hH]*?[hH]")
+    x = regex.sub(b"", x).decode()
+    print(x.split('\n')[-1])
 
 
 class Procurve24pConfig:
@@ -43,7 +42,9 @@ class Procurve24pConfig:
         # Début de l'écriture du fichier de config
         output = open("/var/tftp/" + tmpConfigName, "w")
 
-        output.write(f"; {self.model_id} Configuration Editor; Created on release #Y.11.51\n\n")
+        output.write(
+            f"; {self.model_id} Configuration Editor; Created on release #Y.11.51\n\n"
+        )
         output.write(f'hostname "{self.name}"\n')
         output.write('snmp-server community "hotlinemontreal" Unrestricted\n')
 
@@ -73,12 +74,6 @@ class Procurve24pConfig:
         with Telnet(self.ip) as tn:
             bypass_dumb_prompts(tn, self.password)
 
-            #buf = tn.read_until(b"#", timeout=2)
-            #if b"#" not in buf:
-            #    print("shit broke fam")
-
-            #printbytes(buf)
-
             print(f"Copying config from {tftp_server_ip}...")
             tn.write(
                 b"copy tftp startup-config "
@@ -93,15 +88,17 @@ class Procurve24pConfig:
 
         print("Done!")
 
+
 def bypass_dumb_prompts(tn, password):
     # this is dumb
     # keep giving the switch what it wants until it doesn't ask for anything anymore
     idx = 1
-    ls_users = [b'manager', b'admin']
+    ls_users = [b"manager", b"admin"]
     i_usr = 0
+    is_password_set = False
     while idx >= 0:
         idx, match, buf = tn.expect([b"Password", b"continue", b"Username"], timeout=3)
-        print(buf)
+        printbytes(buf)
         if match is None:
             break
         if match.group(0).lower() == b"username":
@@ -112,14 +109,19 @@ def bypass_dumb_prompts(tn, password):
         elif match.group(0).lower() == b"continue":
             print("continue requested. sending newline")
             tn.write(b"\n")
-            #print("\n\n[WARNING] (SPOOKY) No password configured! you should configure it manually.\n\n")
 
         elif match.group(0).lower() == b"password":
             print("Authenticating...")
             tn.write(password.encode() + b"\n")
+            is_password_set = True
         else:
             print(f"Shit broke my dude, match={match}")
             break
+
+    if not is_password_set:
+        print(
+            "\n\n[WARNING] (SPOOKY) No password configured! you should configure it manually.\n\n")
+        
 
 
 if __name__ == "__main__":
@@ -139,3 +141,4 @@ if __name__ == "__main__":
 
     switch = Procurve24pConfig(f"172.16.1.1{switch_number}", switch_password, data)
     switch.configure()
+

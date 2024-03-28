@@ -10,6 +10,7 @@ def printbytes(x):
     print(x.split('\n')[-1])
 
 
+
 class Procurve24pConfig:
     def __init__(self, ip, name, password, model_id, data):
         self.ip = ip
@@ -72,7 +73,10 @@ class Procurve24pConfig:
         tftp_server_ip = "172.16.1.1"
 
         with Telnet(self.ip) as tn:
-            bypass_dumb_prompts(tn, self.password)
+            is_password_set = bypass_dumb_prompts(tn, self.password)
+
+            if not is_password_set:
+                setpassword(tn, self.password)
 
             print(f"Copying config from {tftp_server_ip}...")
             tn.write(
@@ -120,9 +124,49 @@ def bypass_dumb_prompts(tn, password):
 
     if not is_password_set:
         print(
-            "\n\n[WARNING] (SPOOKY) No password configured! you should configure it manually.\n\n")
+            "\n\n[WARNING] (SPOOKY) No password configured! This script will try to set it.\n\n")
+
+    return is_password_set
         
 
+def setpassword(tn, password):
+    tn.write(b"config\n")
+    idx, match, buf = tn.expect([b'#'], timeout=3)
+    printbytes(buf)
+    if match is None:
+        print("BROKE: couldn't set password, couldn't enter config")
+        return
+    tn.write(b"password manager\n")
+
+    idx, match, buf = tn.expect([b':'], timeout=3)
+    printbytes(buf)
+    if match is None:
+        print("BROKE: couldn't set password, couldn't put password")
+        return
+    tn.write(password.encode("ascii") + b"\n")
+
+    idx, match, buf = tn.expect([b':'], timeout=3)
+    printbytes(buf)
+    if match is None:
+        print("BROKE: couldn't set password, couldn't put password again")
+        return
+    tn.write(password.encode("ascii") + b"\n")
+
+    idx, match, buf = tn.expect([b'#'], timeout=3)
+    printbytes(buf)
+    if match is None:
+        print("BROKE: couldn't set password, couldn't enter config")
+        return
+    tn.write(b"write memory\n")
+
+    idx, match, buf = tn.expect([b'#'], timeout=3)
+    printbytes(buf)
+    if match is None:
+        print("BROKE: couldn't set password, couldn't enter config")
+        return
+    tn.write(b"exit\n")
+
+    print("password set successfully")
 
 if __name__ == "__main__":
     import sys, json

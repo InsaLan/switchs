@@ -41,7 +41,7 @@ def configure_switch(switch, config, access_password, new_password):
         brocade48p_config(switch, config, access_password)
 
     elif switch["model"] == "24p-procurve":
-        procurve24p_config(switch, config, access_password)
+        procurve24p_config(switch, config, access_password, new_password)
 
     else:
         print(f"Unsupported switch model \"{switch['model']}\"")

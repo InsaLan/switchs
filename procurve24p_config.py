@@ -88,7 +88,7 @@ def printbytes(x):
     print(x.split("\n")[-1])
 
 
-def procurve24p_config(switch, data, access_password):
+def procurve24p_config(switch, data, access_password, new_password):
     ip = switch["ip"]
     name = switch["name"]
     model_id = switch["model_id"]
@@ -146,8 +146,10 @@ def procurve24p_config(switch, data, access_password):
     with Telnet(ip) as tn:
         is_password_set = bypass_dumb_prompts(tn, access_password)
 
-        if not is_password_set:
-            setpassword(tn, access_password)
+        if not is_password_set or new_password is not None:
+            setpassword(
+                tn, new_password if new_password is not None else access_password
+            )
 
         print(f"Copying config from {tftp_server_ip}...")
         tn.write(

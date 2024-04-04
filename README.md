@@ -17,18 +17,22 @@ tagged/untagged and on which VLANs)
 
 The main entrypoint is `switchs.py`.
 ```
-usage: switchs.py [-h] [--switch NUMBER] switchs_file configs_file switch_password
+
+usage: switchs.py [-h] [--switch NUMBER] [--new-password PASSWORD] switchs_file configs_file access_password
 
 Configure switches automatically
 
 positional arguments:
   switchs_file          JSON file containing the list of switches
   configs_file          JSON file containing the list of configurations
-  switch_password       Password for the switches
+  access_password       Password to access the switches
 
 options:
   -h, --help            show this help message and exit
   --switch NUMBER, -s NUMBER
+                        Switch to configure (by number)
+  --new-password PASSWORD, -p PASSWORD
+                        New password for the switches
                         Switch to configure (by number)
 ```
 

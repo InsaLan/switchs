@@ -92,8 +92,6 @@ def procurve24p_config(switch, data, access_password):
     ip = switch["ip"]
     name = switch["name"]
     model_id = switch["model_id"]
-    data = data
-    access_password = access_password
 
     # 1 - do nothing
     ports = data["ports"]

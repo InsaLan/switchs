@@ -3,7 +3,7 @@ from telnetlib import Telnet
 from enterasys24p import Enterasys24p
 from enterasys48p_config import Enterasys48pConfig
 from procurve24p_config import procurve24p_config
-from brocade48p_config import Brocade48pConfig
+from brocade48p_config import brocade48p_config
 import json
 import argparse
 
@@ -39,8 +39,7 @@ def configure_switch(switch, config, access_password, new_password):
         s.configure()
 
     elif switch["model"] == "48p-brocade":
-        s = Brocade48pConfig(switch["ip"], access_password, config)
-        s.configure()
+        brocade48p_config(switch, config, access_password)
 
     elif switch["model"] == "24p-procurve":
         procurve24p_config(switch, config, access_password)

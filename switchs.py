@@ -2,7 +2,7 @@
 from telnetlib import Telnet
 from enterasys24p import Enterasys24p
 from enterasys48p_config import Enterasys48pConfig
-from procurve24p_config import Procurve24pConfig
+from procurve24p_config import procurve24p_config
 from brocade48p_config import Brocade48pConfig
 import json
 import argparse
@@ -43,10 +43,7 @@ def configure_switch(switch, config, access_password, new_password):
         s.configure()
 
     elif switch["model"] == "24p-procurve":
-        s = Procurve24pConfig(
-            switch["ip"], switch["name"], access_password, switch["model_id"], config
-        )
-        s.configure()
+        procurve24p_config(switch, config, access_password)
 
     else:
         print(f"Unsupported switch model \"{switch['model']}\"")

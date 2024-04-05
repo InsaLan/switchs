@@ -5,7 +5,7 @@
 from telnetlib import Telnet
 
 
-def enterasys48p_config(switch, data, access_password):
+def enterasys48p_config(switch, data, access_password, new_password):
     ip = switch["ip"]
     # todo: put hostname in switch
     name = switch["name"]
@@ -58,7 +58,7 @@ def enterasys48p_config(switch, data, access_password):
         """
 set switch stack-port ethernet 
 set switch member 1 6 
-set system login admin super-user enable  password :4eae55fe808cc25a83205b467c653809073c81e760b4d366e210866c3c26993df315ea69075e1a1598:
+set system login admin super-user enable  password {new_password}
 """
     )
 

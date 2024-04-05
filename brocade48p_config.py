@@ -1,7 +1,7 @@
 from telnetlib import Telnet
 
 
-def brocade48p_config(switch, data, access_password):
+def brocade48p_config(switch, data, access_password, new_password):
     ip = switch["ip"]
 
     # TODO: put hostname
@@ -54,7 +54,7 @@ module 2 icx6430-sfp-4port-4g-module\n!\n!\n!\n!
 
     output.write(
         f"""!\n!\n!\n!
-enable super-user-password {access_password}
+enable super-user-password {new_password}
 snmp-server community hotlinemontreal ro
 !
 hostname management

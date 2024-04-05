@@ -35,10 +35,10 @@ def configure_switch(switch, config, access_password, new_password):
             s.saveConfig()
 
     elif switch["model"] == "48p-enterasys":
-        enterasys48p_config(switch, config, access_password)
+        enterasys48p_config(switch, config, access_password, new_password)
 
     elif switch["model"] == "48p-brocade":
-        brocade48p_config(switch, config, access_password)
+        brocade48p_config(switch, config, access_password, new_password)
 
     elif switch["model"] == "24p-procurve":
         procurve24p_config(switch, config, access_password, new_password)

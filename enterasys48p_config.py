@@ -53,9 +53,12 @@ def enterasys48p_config(switch, data, access_password, new_password):
     output.write("set ip protocol none\n")
     output.write(f"set ip address {ip} mask 255.255.255.0 gateway 172.16.1.1\n")
 
+    if new_password is None:
+        new_password = access_password;
+
     # system
     output.write(
-        """
+        f"""
 set switch stack-port ethernet 
 set switch member 1 6 
 set system login admin super-user enable  password {new_password}

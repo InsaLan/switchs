@@ -51,7 +51,10 @@ module 2 icx6430-sfp-4port-4g-module\n!\n!\n!\n!
                         f" untagged ethe {port_range_to_brocade(port_range)}\n"
                     )
         output.write(" no spanning-tree\n!\n")
-
+    
+    if new_password is None:
+        new_password = access_password;
+    
     output.write(
         f"""!\n!\n!\n!
 enable super-user-password {new_password}

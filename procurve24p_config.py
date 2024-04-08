@@ -145,10 +145,9 @@ def procurve24p_config(switch, config, access_password, new_password):
 
     with Telnet(ip) as tn:
         is_password_set = bypass_dumb_prompts(tn, access_password)
-
-        setpassword(
-            tn, new_password
-        )
+        
+        if (not is_password_set) or new_password != access_password:
+            setpassword(tn, new_password)
 
         print(f"Copying config from {tftp_server_ip}...")
         tn.write(

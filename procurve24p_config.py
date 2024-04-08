@@ -88,13 +88,13 @@ def printbytes(x):
     print(x.split("\n")[-1])
 
 
-def procurve24p_config(switch, data, access_password, new_password):
+def procurve24p_config(switch, config, access_password, new_password):
     ip = switch["ip"]
     name = switch["name"]
     model_id = switch["model_id"]
 
     # 1 - do nothing
-    ports = data["ports"]
+    ports = config["ports"]
 
     # 2 - we create an array of all existing (untagged AND tagged) VLANs in the configuration
     vlans = []
@@ -124,10 +124,10 @@ def procurve24p_config(switch, data, access_password, new_password):
         output.write("vlan {}\n".format(vlan))
         output.write(f'  name "vlan{vlan}"\n')
         output.write("  ip address dhcp-bootp\n")
-        for port_range, data in ports.items():
-            if data["untagged"] == vlan:
+        for port_range, config in ports.items():
+            if config["untagged"] == vlan:
                 output.write(f"  untagged {port_range}\n")
-            elif vlan in data["tagged"]:
+            elif vlan in config["tagged"]:
                 output.write(f"  tagged {port_range}\n")
         output.write("  exit\n")
 

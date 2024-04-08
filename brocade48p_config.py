@@ -1,14 +1,14 @@
 from telnetlib import Telnet
 
 
-def brocade48p_config(switch, data, access_password, new_password):
+def brocade48p_config(switch, config, access_password, new_password):
     ip = switch["ip"]
 
     # TODO: put hostname
     name = switch["name"]
 
     # 1 - do nothing
-    ports = data["ports"]
+    ports = config["ports"]
 
     # 2 - we create an array of all existing (untagged AND tagged) VLANs in the configuration
     vlans = []
@@ -43,10 +43,10 @@ module 2 icx6430-sfp-4port-4g-module\n!\n!\n!\n!
     for vlan in vlans:
         output.write(f"vlan {vlan} name vlan{vlan} by port\n")
         if vlan != 1:  # Vlan #1's config is done later via dual mode
-            for port_range, data in ports.items():
-                if vlan in data["tagged"]:
+            for port_range, config in ports.items():
+                if vlan in config["tagged"]:
                     output.write(f" tagged ethe {port_range_to_brocade(port_range)}\n")
-                elif data["untagged"] == vlan:
+                elif config["untagged"] == vlan:
                     output.write(
                         f" untagged ethe {port_range_to_brocade(port_range)}\n"
                     )
@@ -66,8 +66,8 @@ clock timezone us Alaska
 web-management https\n"""
     )
 
-    for port_range, data in ports.items():
-        if data["untagged"] == 1:
+    for port_range, config in ports.items():
+        if config["untagged"] == 1:
             if "-" in port_range:
                 separation = port_range.split("-")
                 premier = int(separation[0])

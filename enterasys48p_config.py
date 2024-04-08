@@ -4,15 +4,14 @@
 
 from telnetlib import Telnet
 
-
-def enterasys48p_config(switch, data, access_password, new_password):
+def enterasys48p_config(switch, config, access_password, new_password):
     ip = switch["ip"]
     # todo: put hostname in switch
     name = switch["name"]
 
     # 1 - we copy all ports datas to a new dictionnary with all port ranges being split at 48
     ports = {}
-    for element in data["ports"]:
+    for element in config["ports"]:
         port_range = element.split(".")[-1]
         if "-" in port_range:
             separation = port_range.split("-")
@@ -23,10 +22,10 @@ def enterasys48p_config(switch, data, access_password, new_password):
             deuxieme = premier
 
         if premier <= 48 and deuxieme > 48:
-            ports["{}-48".format(premier)] = data["ports"][element]
-            ports["49-{}".format(deuxieme)] = data["ports"][element]
+            ports["{}-48".format(premier)] = config["ports"][element]
+            ports["49-{}".format(deuxieme)] = config["ports"][element]
         else:
-            ports["{}-{}".format(premier, deuxieme)] = data["ports"][element]
+            ports["{}-{}".format(premier, deuxieme)] = config["ports"][element]
 
     # 2 - we create an array of all existing (untagged AND tagged) VLANs in the configuration
     vlans = []

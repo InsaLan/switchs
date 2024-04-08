@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 from telnetlib import Telnet
-from enterasys24p import Enterasys24p
+from enterasys24p_config import enterasys24p_config
 from enterasys48p_config import enterasys48p_config
 from procurve24p_config import procurve24p_config
 from brocade48p_config import brocade48p_config
@@ -11,29 +11,7 @@ import sys
 def configure_switch(switch, config, access_password, new_password):
     print(f"Configuring switch {switch['name']} ({switch['ip']})")
     if str(switch["model"]) == "24p-enterasys":
-        with Telnet(switch["ip"]) as tn:
-            s = Enterasys24p(tn)
-
-            s.authenticate("admin", access_password)
-            print(f"Connected to switch {switch['name']}")
-
-            s.beforeVlan()
-            s.changePassword("new_password")
-            s.activateSnmp("hotlinemontreal")
-
-            ports = config["ports"]
-            for port, config in [(p, ports[p]) for p in ports]:
-                s.setInterface(port)
-                s.setVlanUntagged(port, config["untagged"])
-                s.setNativeVlan(port, config["untagged"])
-
-                for taggedVlan in config["tagged"]:
-                    s.setVlanTagged(port, taggedVlan)
-
-                s.unsetInterface()
-
-            s.afterVlan()
-            s.saveConfig()
+        enterasys24p_config(switch, config, access_password, new_password)
 
     elif switch["model"] == "48p-enterasys":
         enterasys48p_config(switch, config, access_password, new_password)
@@ -73,8 +51,8 @@ def main():
     with open(args.configs_file, "r") as f:
         listConfig = json.load(f)
     
-    if new_password is None:
-        new_password = access_password
+    if args.new_password is None:
+        args.new_password = args.access_password
     elif len(args.new_password) < 8:
         print("Error : new password must be at least 8 characters long.")
         sys.exit()

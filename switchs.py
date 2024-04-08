@@ -6,7 +6,7 @@ from procurve24p_config import procurve24p_config
 from brocade48p_config import brocade48p_config
 import json
 import argparse
-
+import sys
 
 def configure_switch(switch, config, access_password, new_password):
     print(f"Configuring switch {switch['name']} ({switch['ip']})")
@@ -18,6 +18,7 @@ def configure_switch(switch, config, access_password, new_password):
             print(f"Connected to switch {switch['name']}")
 
             s.beforeVlan()
+            s.changePassword("new_password")
             s.activateSnmp("hotlinemontreal")
 
             ports = config["ports"]
@@ -71,6 +72,12 @@ def main():
 
     with open(args.configs_file, "r") as f:
         listConfig = json.load(f)
+    
+    if new_password is None:
+        new_password = access_password
+    elif len(args.new_password) < 8:
+        print("Error : new password must be at least 8 characters long.")
+        sys.exit()
 
     if args.switch is not None:
         switch_ip = f"172.16.1.1{args.switch.zfill(2)}"

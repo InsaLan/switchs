@@ -25,6 +25,10 @@ class Enterasys24p:
         self.telnet.write(b"configure\n")
         self.waitForPrompt()
 
+    def changePassword(new_password):
+        self.telnet.write(b"username admin password 0 "+new_password+"\n")
+        self.waitForPrompt()
+
     def setInterface(self, selector):
         self.telnet.write(b"interface ethernet 1/" + selector.encode() + b"\n")
         self.waitForPrompt()

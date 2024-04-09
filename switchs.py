@@ -40,7 +40,7 @@ def main():
         "--switch", "-s", help="Switch to configure (by number)", metavar="NUMBER"
     )
     parser.add_argument(
-        "--new-password", "-p", help="New password for the switches", metavar="PASSWORD"
+        "--new-password", "-p", help="New password for the switches (must be at least 8 characters long)", metavar="PASSWORD"
     )
 
     args = parser.parse_args()

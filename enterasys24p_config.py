@@ -1,7 +1,7 @@
 from telnetlib import Telnet
 
 def wait_for_prompt(tn):
-		print(tn.read_until(b"#")) # <-- print feedback from the switch
+	print(tn.read_until(b"#")) # <-- print feedback from the switch
 
 def enterasys24p_config(switch, config, access_password, new_password):
 	with Telnet(switch["ip"]) as tn:

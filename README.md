@@ -17,7 +17,6 @@ tagged/untagged and on which VLANs)
 
 The main entrypoint is `switchs.py`.
 ```
-
 usage: switchs.py [-h] [--switch NUMBER] [--new-password PASSWORD] switchs_file configs_file access_password
 
 Configure switches automatically
@@ -32,8 +31,7 @@ options:
   --switch NUMBER, -s NUMBER
                         Switch to configure (by number)
   --new-password PASSWORD, -p PASSWORD
-                        New password for the switches
-                        Switch to configure (by number)
+                        New password for the switches (must be at least 8 characters long)
 ```
 
 For example, if you want to configure the switch number 24 (with IP address `172.16.1.124`), you would run the following command:
@@ -49,9 +47,9 @@ Run it without `--switch` to be prompted for each switch in the list.
 
 This script detects the model of each switch from the switch file and then automatically calls the right configuration script depending on the model (`enterasys24p`, `enterasys48p`, `procurve24p`...).
 
-`enterasys24p` connects via _telnet_ and sends all configuration commands directly through the virtual terminal.  
-`enterasys48p_config` and `procurve24p_config` generate a configuration file locally, place it in the _tftp_ folder, and _then_ connect to the switch via _telnet_ and simply ask the switch to download the configuration file from this very machine with _TFTP_.  
-We do that because telnet is unstable and the "basic" way (the `enterasys24p` way) often crashed on 48p.
+`enterasys24p_config` connects via _telnet_ and sends all configuration commands directly through the virtual terminal.  
+`enterasys48p_config`, `brocade48p_config` and `procurve24p_config` generate a configuration file locally, place it in the _tftp_ folder, and _then_ connect to the switch via _telnet_ and simply ask the switch to download the configuration file from this very machine with _TFTP_.  
+We do that because telnet is unstable and the "basic" way (the `enterasys24p_config` way) often crashed on 48p.
 
 ## Configuration template definition
 

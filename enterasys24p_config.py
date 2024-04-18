@@ -15,11 +15,11 @@ def enterasys24p_config(switch, config, access_password, new_password):
 		tn.write(b"configure\n")
 		wait_for_prompt(tn)
 
-		tn.write(b"username admin password 0 "+new_password+"\n")
+		tn.write(b"username admin password 0 "+new_password.encode()+b"\n")
 		wait_for_prompt(tn)
 		
 		tn.write(b"snmp-server\n")
-		wait_for_prompt()
+		wait_for_prompt(tn)
 		tn.write(b"snmp-server community hotlinemontreal ro\n")
 		wait_for_prompt(tn)
 		
@@ -35,7 +35,7 @@ def enterasys24p_config(switch, config, access_password, new_password):
 			wait_for_prompt(tn)
 			
 			tn.write(b"switchport native vlan " + str(config["untagged"]).encode() + b"\n")
-			wait_for_prompt()
+			wait_for_prompt(tn)
 			
 			for tagged_vlan in config["tagged"]:
 				tn.write(b"switchport allowed vlan add " + str(tagged_vlan).encode() + b" tagged\n")

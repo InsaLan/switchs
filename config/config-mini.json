@@ -27,6 +27,20 @@
 		}
 	},
 
+	"joueur-48p": {
+		"ports": {
+			"1-46": {
+				"untagged": 105,
+				"tagged": []
+			},
+
+			"47-48": {
+				"untagged": 1,
+				"tagged": [ 105 ]
+			}
+		}
+	},
+
 	"staff-24p": {
 		"ports": {
 			"1-2": {

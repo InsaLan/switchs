@@ -123,7 +123,8 @@ def procurve24p_config(switch, config, access_password, new_password):
     for vlan in vlans:
         output.write("vlan {}\n".format(vlan))
         output.write(f'  name "vlan{vlan}"\n')
-        output.write("  ip address dhcp-bootp\n")
+        if vlan == 1:
+            output.write("  ip address dhcp-bootp\n")
         for port_range, config in ports.items():
             if config["untagged"] == vlan:
                 output.write(f"  untagged {port_range}\n")

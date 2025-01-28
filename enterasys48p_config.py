@@ -1,7 +1,7 @@
 # NEW VERSION
 # On préfère cette version à enterasys48p simple car elle push directement la config
 # sur le switch et ne rentre pas toutes les commandes via telnet (ce qui bugue sur les 48p)
-
+import re
 from telnetlib import Telnet
 
 def enterasys48p_config(switch, config, access_password, new_password):
@@ -64,15 +64,18 @@ set system login admin super-user enable  password :{new_password}:
     for vlan in vlans:
         output.write("set vlan create {}\n".format(vlan))
 
+    serial_number = get_serial_number(ip, access_password)
+
     for port_range in ports:
         separation = port_range.split("-")
         premier = int(separation[0])
         deuxieme = int(separation[1])
-        if premier > 48:
+        if premier > 48 or serial_number == "B5K125-48P2":
             fege = "ge"
         else:
             fege = "fe"
-
+        print("fege")
+        return
         output.write(f"clear vlan egress 1 {fege}.1.{port_range}\n")
 
         if "untagged" in ports[port_range]:
@@ -88,7 +91,7 @@ set system login admin super-user enable  password :{new_password}:
         separation = port_range.split("-")
         premier = int(separation[0])
         deuxieme = int(separation[1])
-        if premier > 48:
+        if premier > 48 or serial_number == "B5K125-48P2":
             fege = "ge"
         else:
             fege = "fe"
@@ -140,3 +143,17 @@ set snmp group public user hotlinemontreal security-model v2c nonvolatile
         tn.write(b"y")
 
     print("Done!")
+
+def get_serial_number(ip, access_password):
+    with Telnet(ip) as tn:
+        tn.read_until(b"Username:")
+        tn.write(b"admin\n")
+        tn.read_until(b"Password:")
+        tn.write(access_password.encode() + b"\n")
+        tn.read_until(b"->")
+        tn.write(b"show version\n")
+        tn.read_until(b"--\r\n")
+        tn.read_until(b"\r\n")
+        data = tn.read_until(b"\r\n")
+        serial = re.search(r"[A|B]\w+-\w+", data.decode())
+        return serial.group(0)

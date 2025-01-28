@@ -41,6 +41,20 @@
 		}
 	},
 
+	"joueur-50p": {
+		"ports": {
+			"1-48": {
+				"untagged": 105,
+				"tagged": []
+			},
+
+			"49-50": {
+				"untagged": 1,
+				"tagged": [ 105 ]
+			}
+		}
+	},
+
 	"staff-24p": {
 		"ports": {
 			"1-2": {
@@ -109,6 +123,42 @@
 			},
 
 			"25": {
+				"untagged": 1,
+				"tagged": [ 110, 112 ]
+			}
+		}
+	},
+
+	"staff-50p": {
+		"ports": {
+			"1-2": {
+				"untagged": 1,
+				"tagged": [ 112 ]
+			},
+			"3-48": {
+				"untagged": 110,
+				"tagged": []
+			},
+
+			"49-50": {
+				"untagged": 1,
+				"tagged": [ 110, 112 ]
+			}
+		}
+	},
+	
+	"staff-48p": {
+		"ports": {
+			"1-2": {
+				"untagged": 1,
+				"tagged": [ 112 ]
+			},
+			"3-47": {
+				"untagged": 110,
+				"tagged": []
+			},
+
+			"48": {
 				"untagged": 1,
 				"tagged": [ 110, 112 ]
 			}

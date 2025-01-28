@@ -1,0 +1,13 @@
+[
+    {"name": "Scandium", "ip": "172.16.1.121", "config": "joueur-48p", "model": "48p-enterasys"},
+    {"name": "Titanium", "ip": "172.16.1.122", "config": "joueur-48p", "model": "48p-enterasys"},
+    {"name": "Vanadium", "ip": "172.16.1.123", "config": "joueur-48p", "model": "48p-enterasys"},
+    {"name": "Chromium", "ip": "172.16.1.124", "config": "joueur-48p", "model": "48p-enterasys"},
+    {"name": "Copper", "ip": "172.16.1.129", "config": "joueur-48p", "model": "48p-enterasys"},
+    {"name": "Zinc", "ip": "172.16.1.130", "config": "joueur-48p", "model": "48p-enterasys"},
+    {"name": "Gallium", "ip": "172.16.1.131", "config": "joueur-48p", "model": "48p-enterasys"},
+    {"name": "Germanium", "ip": "172.16.1.132", "config": "joueur-48p", "model": "48p-enterasys"},
+    {"name": "Arsenic", "ip": "172.16.1.133", "config": "staff-48p", "model": "48p-enterasys"},
+    {"name": "Selenium", "ip": "172.16.1.134", "config": "staff-48p", "model": "48p-enterasys"},
+    {"name": "Bromine", "ip": "172.16.1.135", "config": "joueur-50p", "model": "48p-enterasys"}
+]

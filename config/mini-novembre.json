@@ -1,0 +1,12 @@
+[
+    {"name": "Sodium", "ip": "172.16.1.111", "config": "joueur-48p", "model": "48p-enterasys"},
+    {"name": "Magnesium", "ip": "172.16.1.112", "config": "joueur-48p", "model": "48p-enterasys"},
+    {"name": "Aluminum", "ip": "172.16.1.113", "config": "joueur-48p", "model": "48p-enterasys"},
+    {"name": "Silicon", "ip": "172.16.1.114", "config": "joueur-48p", "model": "48p-enterasys"},
+    {"name": "Phosphorus", "ip": "172.16.1.115", "config": "joueur-48p", "model": "48p-enterasys"},
+    {"name": "Sulfur", "ip": "172.16.1.116", "config": "joueur-48p", "model": "48p-enterasys"},
+    {"name": "Chlorine", "ip": "172.16.1.117", "config": "joueur-48p", "model": "48p-enterasys"},
+    {"name": "Argon", "ip": "172.16.1.118", "config": "joueur-48p", "model": "48p-enterasys"},
+    {"name": "Potassium", "ip": "172.16.1.119", "config": "staff-48p", "model": "48p-enterasys"},
+    {"name": "Calcium", "ip": "172.16.1.120", "config": "staff-48p", "model": "48p-enterasys"}
+]

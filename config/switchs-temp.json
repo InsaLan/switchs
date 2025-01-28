@@ -1,0 +1,6 @@
+[
+    {"name": "Boron", "ip": "172.16.1.105", "config": "joueur-25p", "model": "24p-enterasys"},
+    {"name": "Carbon", "ip": "172.16.1.106", "config": "joueur-25p", "model": "24p-enterasys"},
+    {"name": "Nitrogen", "ip": "172.16.1.107", "config": "joueur-25p", "model": "24p-enterasys"},
+    {"name": "Oxygen", "ip": "172.16.1.108", "config": "joueur-25p", "model": "24p-enterasys"}
+]

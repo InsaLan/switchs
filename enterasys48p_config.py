@@ -74,8 +74,6 @@ set system login admin super-user enable  password :{new_password}:
             fege = "ge"
         else:
             fege = "fe"
-        print("fege")
-        return
         output.write(f"clear vlan egress 1 {fege}.1.{port_range}\n")
 
         if "untagged" in ports[port_range]:

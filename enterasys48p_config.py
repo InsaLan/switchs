@@ -49,8 +49,8 @@ def enterasys48p_config(switch, config, access_password, new_password):
 
     output.write("begin\n")
     # Config IP
-    output.write("set ip protocol none\n")
-    output.write(f"set ip address {ip} mask 255.255.255.0 gateway 172.16.1.1\n")
+    #output.write("set ip protocol none\n")
+    #output.write(f"set ip address {ip} mask 255.255.255.0 gateway 172.16.1.1\n")
 
     # system
     output.write(

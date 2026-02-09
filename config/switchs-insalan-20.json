@@ -1,0 +1,49 @@
+[
+    {"name": "Antimony", 	"ip": "172.16.1.151", "config": "streamers-24p", 	"model": "24p-procurve", "model_id": "J9279A"},
+    {"name": "Tellurium", 	"ip": "172.16.1.152", "config": "streamers-24p", 	"model": "24p-procurve", "model_id": "J9279A"},
+    {"name": "Iode", 		"ip": "172.16.1.153", "config": "streamers-24p", 	"model": "24p-procurve", "model_id": "J9279A"},
+    {"name": "Lutetium", 	"ip": "172.16.1.157", "config": "streamers-24p", 		"model": "24p-procurve", "model_id": "J9279A"},
+    
+    {"name": "Aluminum", 	"ip": "172.16.1.113", "config": "scene-48p", 		"model": "48p-enterasys"},
+    {"name": "Silicon", 	"ip": "172.16.1.114", "config": "scene-48p", 		"model": "48p-enterasys"},
+    {"name": "Phosphorus", 	"ip": "172.16.1.115", "config": "scene-48p", 		"model": "48p-enterasys"},
+    {"name": "Sulfur", 		"ip": "172.16.1.116", "config": "scene-48p", 		"model": "48p-enterasys"},
+    {"name": "Chlorine", 	"ip": "172.16.1.117", "config": "scene-48p", 		"model": "48p-enterasys"},
+    
+    {"name": "Germanium", 	"ip": "172.16.1.132", "config": "tm-50p", 		"model": "48p-enterasys"},
+    {"name": "Arsenic", 	"ip": "172.16.1.133", "config": "tm-50p", 		"model": "48p-enterasys"},
+    {"name": "Selenium", 	"ip": "172.16.1.134", "config": "tm-50p", 		"model": "48p-enterasys"},
+    {"name": "Bromine", 	"ip": "172.16.1.135", "config": "tm-50p", 		"model": "48p-enterasys"},
+    {"name": "Krypton", 	"ip": "172.16.1.136", "config": "tm-50p", 		"model": "48p-enterasys"},
+    {"name": "Rubidium", 	"ip": "172.16.1.137", "config": "tm-50p", 		"model": "48p-enterasys"},
+
+    {"name": "Promethium", 	"ip": "172.16.1.161", "config": "cs-50p", 		"model": "48p-brocade"},
+    {"name": "Samarium", 	"ip": "172.16.1.162", "config": "cs-50p", 		"model": "48p-brocade"},
+    {"name": "Europium", 	"ip": "172.16.1.163", "config": "cs-50p", 		"model": "48p-brocade"},
+    {"name": "Gadolinium", 	"ip": "172.16.1.164", "config": "cs-50p", 		"model": "48p-brocade"},
+    {"name": "Terbium", 	"ip": "172.16.1.165", "config": "cs-50p", 		"model": "48p-brocade"},
+    {"name": "Dysprosium", 	"ip": "172.16.1.166", "config": "cs-50p", 		"model": "48p-brocade"},
+    {"name": "Molybdenum", 	"ip": "172.16.1.142", "config": "cs-50p", 		"model": "48p-enterasys"},
+    {"name": "Cadmium", 	"ip": "172.16.1.148", "config": "cs-50p", 		"model": "48p-enterasys"},
+
+    {"name": "Lutetium", 	"ip": "172.16.1.171", "config": "lol-50p", 		"model": "48p-enterasys"},
+    {"name": "Hafnium", 	"ip": "172.16.1.172", "config": "lol-50p", 		"model": "48p-enterasys"},
+    {"name": "Tantalum", 	"ip": "172.16.1.173", "config": "lol-50p", 		"model": "48p-enterasys"},
+    {"name": "Tungsten", 	"ip": "172.16.1.174", "config": "lol-50p", 		"model": "48p-enterasys"},
+    {"name": "Rhenium", 	"ip": "172.16.1.175", "config": "lol-50p", 		"model": "48p-enterasys"},
+    {"name": "Osmium", 	    "ip": "172.16.1.176", "config": "lol-50p", 		"model": "48p-enterasys"},
+    {"name": "Iridium", 	"ip": "172.16.1.177", "config": "lol-50p", 		"model": "48p-enterasys"},
+    {"name": "Platinum", 	"ip": "172.16.1.178", "config": "lol-50p", 		"model": "48p-enterasys"},
+
+    {"name": "Technetium", 	"ip": "172.16.1.143", "config": "lol-50p", 		"model": "48p-enterasys"},
+    {"name": "Ruthenium", 	"ip": "172.16.1.144", "config": "lol-50p", 		"model": "48p-enterasys"},
+    {"name": "Rhodium", 	"ip": "172.16.1.145", "config": "lol-50p", 		"model": "48p-enterasys"},
+    {"name": "Palladium", 	"ip": "172.16.1.146", "config": "lol-50p", 		"model": "48p-enterasys"},
+
+    {"name": "Argon", 		"ip": "172.16.1.118", "config": "sysrez-48p", 		"model": "48p-enterasys"},
+    {"name": "Potassium", 	"ip": "172.16.1.119", "config": "sysrez-48p", 		"model": "48p-enterasys"},
+
+    {"name": "Xenon", 		"ip": "172.16.1.154", "config": "admin-24p", 	"model": "24p-procurve", "model_id": "J9087A"},
+    {"name": "Cesium", 		"ip": "172.16.1.155", "config": "admin-24p", 		"model": "24p-procurve", "model_id": "J9145A"}
+
+]

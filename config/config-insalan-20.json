@@ -1,0 +1,199 @@
+{
+	"tm-50p": {
+		"ports": {
+			"1-48": {
+				"untagged": 102,
+				"tagged": []
+			},
+
+			"49-50": {
+				"untagged": 1,
+				"tagged": [102]
+			}
+		}
+	},
+
+	"cs-50p": {
+		"ports": {
+			"1-48": {
+				"untagged": 101,
+				"tagged": []
+			},
+
+			"49-50": {
+				"untagged": 1,
+				"tagged": [101]
+			}
+		}
+	},
+
+	"lol-50p": {
+		"ports": {
+			"1-48": {
+				"untagged": 103,
+				"tagged": []
+			},
+
+			"49-50": {
+				"untagged": 1,
+				"tagged": [103]
+			}
+		}
+	},
+
+	"admin-24p": {
+		"ports": {
+			"1-20": {
+				"untagged": 100,
+				"tagged": []
+			},
+
+			"21-24": {
+				"untagged": 1,
+				"tagged": [100]
+			}
+
+		}
+	},
+
+	"streamers-24p": {
+		"ports": {
+			"1-6": {
+				"untagged": 101,
+				"tagged": []
+			},
+
+			"7-12": {
+				"untagged": 103,
+				"tagged": []
+			},
+
+			"13-22": {
+				"untagged": 102,
+				"tagged": []
+			},
+
+			"23-24": {
+				"untagged": 1,
+				"tagged": [101, 102, 103]
+			}
+		}
+	},
+
+	"scene-48p": {
+		"ports": {
+			"1-32": {
+				"untagged": 111,
+				"tagged": []
+			},
+
+			"33-36": {
+				"untagged": 101,
+				"tagged": []
+			},
+
+			"37-40": {
+				"untagged": 103,
+				"tagged": []
+			},
+
+			"41-44": {
+				"untagged": 102,
+				"tagged": []
+			},
+
+			"45": {
+				"untagged": 1,
+				"tagged": [114]
+			},
+
+			"45-48": {
+				"untagged": 1,
+				"tagged": [101, 102, 103, 111, 114]
+			}
+		}
+	},
+
+	"sysrez-48p": {
+		"ports": {
+			"1": {
+				"untagged": 150,
+				"tagged": []
+			},
+
+			"2": {
+				"untagged": 151,
+				"tagged": []
+			},
+
+			"3": {
+				"untagged": 113,
+				"tagged": []
+			},
+
+			"4": {
+				"untagged": 111,
+				"tagged": []
+			},
+
+			"5": {
+				"untagged": 114,
+				"tagged": []
+			},
+
+			"6": {
+				"untagged": 100,
+				"tagged": []
+			},
+
+			"7": {
+				"untagged": 101,
+				"tagged": []
+			},
+
+			"8": {
+				"untagged": 103,
+				"tagged": []
+			},
+
+			"9": {
+				"untagged": 102,
+				"tagged": []
+			},
+
+			"10-48": {
+				"untagged": 1,
+				"tagged": [150, 151, 113, 111, 114, 100, 101, 103, 102]
+			}
+		}
+	},
+
+	"admin-48p": {
+		"ports": {
+			"1-46": {
+				"untagged": 100,
+				"tagged": []
+			},
+
+			"47-48": {
+				"untagged": 1,
+				"tagged": [100]
+			}
+		}
+	},
+
+	"partos-24p": {
+		"ports": {
+			"1-20": {
+				"untagged": 114,
+				"tagged": []
+			},
+
+			"21-24": {
+				"untagged": 1,
+				"tagged": [114]
+			}
+
+		}
+	}
+}

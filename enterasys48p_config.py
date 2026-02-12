@@ -4,6 +4,8 @@
 import re
 from telnetlib import Telnet
 
+switch_chiantos = ["B5G124-48P2", "B5K125-48P2", "B5G124-48", "B5K125-48"]
+
 def enterasys48p_config(switch, config, access_password, new_password):
     ip = switch["ip"]
     # todo: put hostname in switch
@@ -70,7 +72,7 @@ set system login admin super-user enable  password :{new_password}:
         separation = port_range.split("-")
         premier = int(separation[0])
         deuxieme = int(separation[1])
-        if premier > 48 or serial_number in ["B5K125-48P2", "B5G124-48", "B5K125-48"]:
+        if premier > 48 or serial_number in switch_chiantos:
             fege = "ge"
         else:
             fege = "fe"
@@ -89,7 +91,7 @@ set system login admin super-user enable  password :{new_password}:
         separation = port_range.split("-")
         premier = int(separation[0])
         deuxieme = int(separation[1])
-        if premier > 48 or serial_number in ["B5K125-48P2", "B5G124-48", "B5K125-48"]:
+        if premier > 48 or serial_number in switch_chiantos:
             fege = "ge"
         else:
             fege = "fe"

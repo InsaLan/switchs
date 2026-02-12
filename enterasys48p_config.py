@@ -89,7 +89,7 @@ set system login admin super-user enable  password :{new_password}:
         separation = port_range.split("-")
         premier = int(separation[0])
         deuxieme = int(separation[1])
-        if premier > 48 or serial_number == "B5K125-48P2":
+        if premier > 48 or serial_number in ["B5K125-48P2", "B5G124-48", "B5K125-48"]:
             fege = "ge"
         else:
             fege = "fe"
